@@ -6,8 +6,7 @@
 #' @param includeTerminationCharacter True if you want to include the ".", false if you want to exclude it. Default value:TRUE
 #' @return An integer vector with all the frequences in the dna sequence given in input
 #' @examples
-#' library(Biostrings)
-#' getFcolumn(DNAString("ACCT"))
+#' getFcolumn(Biostrings::DNAString("ACCT"))
 #' 
 #' @export
 #' @importFrom Biostrings DNAString

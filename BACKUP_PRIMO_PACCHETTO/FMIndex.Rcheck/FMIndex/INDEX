@@ -3,7 +3,7 @@ FMIndex-package         FMIndex - Computer the FM index for a DNA
                         'FMIndex' package implements all the functions
                         necessary to compute the data structures of the
                         FM index
-computeFMIndex          Writes the FM index
+FMindex                 Writes the FM index
 getBWTcharacter         Compute the i-th character of the BWT
 getFcolumn              Compute the F column
 getLcolumn              Compute the L column of a sequence

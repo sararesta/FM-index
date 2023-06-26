@@ -6,19 +6,19 @@ library('FMIndex')
 base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
 base::assign(".old_wd", base::getwd(), pos = 'CheckExEnv')
 cleanEx()
-nameEx("computeFMIndex")
-### * computeFMIndex
+nameEx("FMindex")
+### * FMindex
 
 flush(stderr()); flush(stdout())
 
-### Name: computeFMIndex
+### Name: FMindex
 ### Title: Writes the FM index
-### Aliases: computeFMIndex
+### Aliases: FMindex
 
 ### ** Examples
 
-computeFMIndex(system.file("extdata/seq5.fasta",package="FMIndex"),"")
-computeFMIndex(system.file("extdata/seq5.fasta",package="FMIndex"),"",tallywidth=1)
+FMindex(system.file("extdata/seq5.fasta",package="FMIndex"),"")
+FMindex(system.file("extdata/seq5.fasta",package="FMIndex"),"",tallywidth=1)
 
 
 
@@ -34,8 +34,7 @@ flush(stderr()); flush(stdout())
 
 ### ** Examples
 
-library(Biostrings)
-getFcolumn(DNAString("ACCT"))
+getFcolumn(Biostrings::DNAString("ACCT"))
 
 
 
@@ -52,9 +51,8 @@ flush(stderr()); flush(stdout())
 
 ### ** Examples
 
-library(Biostrings)
-getLcolumn(DNAString("ACGT"))
-getLcolumn(DNAString("AACCGT"))
+getLcolumn(Biostrings::DNAString("ACGT"))
+getLcolumn(Biostrings::DNAString("AACCGT"))
 
 
 
@@ -70,9 +68,8 @@ flush(stderr()); flush(stdout())
 
 ### ** Examples
 
-library(Biostrings)
-getTallyTable(DNAString("T.AACCG"))
-getTallyTable(DNAString("T.AACCG"),2)
+getTallyTable(Biostrings::DNAString("T.AACCG"))
+getTallyTable(Biostrings::DNAString("T.AACCG"),2)
 
 
 

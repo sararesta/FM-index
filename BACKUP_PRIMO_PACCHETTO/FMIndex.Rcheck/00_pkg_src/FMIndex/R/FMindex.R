@@ -9,12 +9,12 @@
 #' @param includeTerminationCharacter default value: true
 #' @return A list containint all the data structures necessary for the FM index
 #' @examples 
-#' computeFMIndex(system.file("extdata/seq5.fasta",package="FMIndex"),"")
-#' computeFMIndex(system.file("extdata/seq5.fasta",package="FMIndex"),"",tallywidth=1)
+#' FMindex(system.file("extdata/seq5.fasta",package="FMIndex"),"")
+#' FMindex(system.file("extdata/seq5.fasta",package="FMIndex"),"",tallywidth=1)
 #' @export
 #' @importFrom Biostrings readDNAStringSet
 #' @importFrom utils write.table
-computeFMIndex <- function(fastafile,usrpath,tallywidth=1,includeTerminationCharacter=TRUE){
+FMindex <- function(fastafile,usrpath,tallywidth=1,includeTerminationCharacter=TRUE){
   seqset <- readDNAStringSet(fastafile,use.names=FALSE)
   sequence <- unlist(seqset)
   f.col <- getFcolumn(unlist(sequence))

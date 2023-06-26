@@ -25,18 +25,18 @@ Type 'q()' to quit R.
 > base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
 > base::assign(".old_wd", base::getwd(), pos = 'CheckExEnv')
 > cleanEx()
-> nameEx("computeFMIndex")
-> ### * computeFMIndex
+> nameEx("FMindex")
+> ### * FMindex
 > 
 > flush(stderr()); flush(stdout())
 > 
-> ### Name: computeFMIndex
+> ### Name: FMindex
 > ### Title: Writes the FM index
-> ### Aliases: computeFMIndex
+> ### Aliases: FMindex
 > 
 > ### ** Examples
 > 
-> computeFMIndex(system.file("extdata/seq5.fasta",package="FMIndex"),"")
+> FMindex(system.file("extdata/seq5.fasta",package="FMIndex"),"")
 $F_column
  .  A  C  G  T 
  1 56 56 57 71 
@@ -289,7 +289,7 @@ $tally_table
 [240,] 56 56 56 71
 [241,] 56 56 57 71
 
-> computeFMIndex(system.file("extdata/seq5.fasta",package="FMIndex"),"",tallywidth=1)
+> FMindex(system.file("extdata/seq5.fasta",package="FMIndex"),"",tallywidth=1)
 $F_column
  .  A  C  G  T 
  1 56 56 57 71 
@@ -557,44 +557,7 @@ $tally_table
 > 
 > ### ** Examples
 > 
-> library(Biostrings)
-Loading required package: BiocGenerics
-
-Attaching package: ‘BiocGenerics’
-
-The following objects are masked from ‘package:stats’:
-
-    IQR, mad, sd, var, xtabs
-
-The following objects are masked from ‘package:base’:
-
-    Filter, Find, Map, Position, Reduce, anyDuplicated, append,
-    as.data.frame, basename, cbind, colnames, dirname, do.call,
-    duplicated, eval, evalq, get, grep, grepl, intersect, is.unsorted,
-    lapply, mapply, match, mget, order, paste, pmax, pmax.int, pmin,
-    pmin.int, rank, rbind, rownames, sapply, setdiff, sort, table,
-    tapply, union, unique, unsplit, which.max, which.min
-
-Loading required package: S4Vectors
-Loading required package: stats4
-
-Attaching package: ‘S4Vectors’
-
-The following objects are masked from ‘package:base’:
-
-    I, expand.grid, unname
-
-Loading required package: IRanges
-Loading required package: XVector
-Loading required package: GenomeInfoDb
-
-Attaching package: ‘Biostrings’
-
-The following object is masked from ‘package:base’:
-
-    strsplit
-
-> getFcolumn(DNAString("ACCT"))
+> getFcolumn(Biostrings::DNAString("ACCT"))
 . A C T 
 1 1 2 1 
 > 
@@ -602,11 +565,6 @@ The following object is masked from ‘package:base’:
 > 
 > 
 > cleanEx()
-
-detaching ‘package:Biostrings’, ‘package:GenomeInfoDb’,
-  ‘package:XVector’, ‘package:IRanges’, ‘package:S4Vectors’,
-  ‘package:stats4’, ‘package:BiocGenerics’
-
 > nameEx("getLcolumn")
 > ### * getLcolumn
 > 
@@ -618,58 +576,16 @@ detaching ‘package:Biostrings’, ‘package:GenomeInfoDb’,
 > 
 > ### ** Examples
 > 
-> library(Biostrings)
-Loading required package: BiocGenerics
-
-Attaching package: ‘BiocGenerics’
-
-The following objects are masked from ‘package:stats’:
-
-    IQR, mad, sd, var, xtabs
-
-The following objects are masked from ‘package:base’:
-
-    Filter, Find, Map, Position, Reduce, anyDuplicated, append,
-    as.data.frame, basename, cbind, colnames, dirname, do.call,
-    duplicated, eval, evalq, get, grep, grepl, intersect, is.unsorted,
-    lapply, mapply, match, mget, order, paste, pmax, pmax.int, pmin,
-    pmin.int, rank, rbind, rownames, sapply, setdiff, sort, table,
-    tapply, union, unique, unsplit, which.max, which.min
-
-Loading required package: S4Vectors
-Loading required package: stats4
-
-Attaching package: ‘S4Vectors’
-
-The following objects are masked from ‘package:base’:
-
-    I, expand.grid, unname
-
-Loading required package: IRanges
-Loading required package: XVector
-Loading required package: GenomeInfoDb
-
-Attaching package: ‘Biostrings’
-
-The following object is masked from ‘package:base’:
-
-    strsplit
-
-> getLcolumn(DNAString("ACGT"))
+> getLcolumn(Biostrings::DNAString("ACGT"))
 5-letter DNAString object
 seq: T.ACG
-> getLcolumn(DNAString("AACCGT"))
+> getLcolumn(Biostrings::DNAString("AACCGT"))
 7-letter DNAString object
 seq: T.AACCG
 > 
 > 
 > 
 > cleanEx()
-
-detaching ‘package:Biostrings’, ‘package:GenomeInfoDb’,
-  ‘package:XVector’, ‘package:IRanges’, ‘package:S4Vectors’,
-  ‘package:stats4’, ‘package:BiocGenerics’
-
 > nameEx("getTallyTable")
 > ### * getTallyTable
 > 
@@ -681,44 +597,7 @@ detaching ‘package:Biostrings’, ‘package:GenomeInfoDb’,
 > 
 > ### ** Examples
 > 
-> library(Biostrings)
-Loading required package: BiocGenerics
-
-Attaching package: ‘BiocGenerics’
-
-The following objects are masked from ‘package:stats’:
-
-    IQR, mad, sd, var, xtabs
-
-The following objects are masked from ‘package:base’:
-
-    Filter, Find, Map, Position, Reduce, anyDuplicated, append,
-    as.data.frame, basename, cbind, colnames, dirname, do.call,
-    duplicated, eval, evalq, get, grep, grepl, intersect, is.unsorted,
-    lapply, mapply, match, mget, order, paste, pmax, pmax.int, pmin,
-    pmin.int, rank, rbind, rownames, sapply, setdiff, sort, table,
-    tapply, union, unique, unsplit, which.max, which.min
-
-Loading required package: S4Vectors
-Loading required package: stats4
-
-Attaching package: ‘S4Vectors’
-
-The following objects are masked from ‘package:base’:
-
-    I, expand.grid, unname
-
-Loading required package: IRanges
-Loading required package: XVector
-Loading required package: GenomeInfoDb
-
-Attaching package: ‘Biostrings’
-
-The following object is masked from ‘package:base’:
-
-    strsplit
-
-> getTallyTable(DNAString("T.AACCG"))
+> getTallyTable(Biostrings::DNAString("T.AACCG"))
      A C G T
 [1,] 0 0 0 1
 [2,] 0 0 0 1
@@ -727,7 +606,7 @@ The following object is masked from ‘package:base’:
 [5,] 2 1 0 1
 [6,] 2 2 0 1
 [7,] 2 2 1 1
-> getTallyTable(DNAString("T.AACCG"),2)
+> getTallyTable(Biostrings::DNAString("T.AACCG"),2)
      A C G T
 [1,] 0 0 0 1
 [2,] 1 0 0 1
@@ -739,14 +618,9 @@ The following object is masked from ‘package:base’:
 > ### * <FOOTER>
 > ###
 > cleanEx()
-
-detaching ‘package:Biostrings’, ‘package:GenomeInfoDb’,
-  ‘package:XVector’, ‘package:IRanges’, ‘package:S4Vectors’,
-  ‘package:stats4’, ‘package:BiocGenerics’
-
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  2.338 0.218 3.321 0 0 
+Time elapsed:  4.894 0.335 7.238 0 0 
 > grDevices::dev.off()
 null device 
           1 
