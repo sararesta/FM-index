@@ -1,0 +1,31 @@
+---
+title: "FMIndex"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{FMIndex}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(FMIndex)
+```
+
+Questa è una prova, volgio solo vedere se quello che ho fatto funziona... Vediamo come va a finire!!
+
+-   ciao
+
+-   spero di uscire da sta cosa
+
+-   uffa, speravo di metterci di meno :(
+
+```{r}
+print("Hello!!")
+```

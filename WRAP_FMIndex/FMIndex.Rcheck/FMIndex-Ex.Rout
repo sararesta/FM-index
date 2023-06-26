@@ -1,0 +1,121 @@
+
+R version 4.1.2 (2021-11-01) -- "Bird Hippie"
+Copyright (C) 2021 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> pkgname <- "FMIndex"
+> source(file.path(R.home("share"), "R", "examples-header.R"))
+> options(warn = 1)
+> library('FMIndex')
+> 
+> base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
+> base::assign(".old_wd", base::getwd(), pos = 'CheckExEnv')
+> cleanEx()
+> nameEx("computeFMIndex")
+> ### * computeFMIndex
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: computeFMIndex
+> ### Title: Writes the FM index
+> ### Aliases: computeFMIndex
+> 
+> ### ** Examples
+> 
+> computeFMIndex(system.file("extdata/seq5.fasta",package="FMIndex"),"test01.txt")
+Warning in write.table(tally.table, file = usrpath, sep = "\t", row.names = FALSE,  :
+  appending column names to file
+> computeFMIndex(system.file("extdata/seq5.fasta",package="FMIndex"),"test02.txt",tallywidth=1)
+Warning in write.table(tally.table, file = usrpath, sep = "\t", row.names = FALSE,  :
+  appending column names to file
+> 
+> 
+> 
+> cleanEx()
+> nameEx("getBWTcharacter")
+> ### * getBWTcharacter
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: getBWTcharacter
+> ### Title: Compute the i-th character of the BWT
+> ### Aliases: getBWTcharacter
+> 
+> ### ** Examples
+> 
+> getBWTcharacter(2,"ACGT",c(5,1,2,3,4))
+[1] "."
+> getBWTcharacter(3,"ACG",c(4,1,2,3))
+[1] "A"
+> 
+> 
+> 
+> cleanEx()
+> nameEx("getLcolumn")
+> ### * getLcolumn
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: getLcolumn
+> ### Title: Compute the L column of a sequence
+> ### Aliases: getLcolumn
+> 
+> ### ** Examples
+> 
+> getLcolumn("ACGT")
+4-letter DNAString object
+seq: .ACG
+> getLcolumn("AACCGT")
+6-letter DNAString object
+seq: .AACCG
+> 
+> 
+> 
+> cleanEx()
+> nameEx("getSuffix")
+> ### * getSuffix
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: getSuffix
+> ### Title: Get the suffix
+> ### Aliases: getSuffix
+> 
+> ### ** Examples
+> 
+> getSuffix(2,"ACGT")
+[1] "CGT"
+> getSuffix(5,"ACCCAGT")
+[1] "AGT"
+> 
+> 
+> 
+> ### * <FOOTER>
+> ###
+> cleanEx()
+> options(digits = 7L)
+> base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
+Time elapsed:  2.265 0.103 2.596 0 0 
+> grDevices::dev.off()
+null device 
+          1 
+> ###
+> ### Local variables: ***
+> ### mode: outline-minor ***
+> ### outline-regexp: "\\(> \\)?### [*]+" ***
+> ### End: ***
+> quit('no')

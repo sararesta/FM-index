@@ -1,0 +1,6 @@
+FMIndex-package	FMIndex-package
+computeFMIndex	computeFMIndex
+FMIndex	FMIndex-package
+getBWTcharacter	getBWTcharacter
+getLcolumn	getLcolumn
+getSuffix	getSuffix

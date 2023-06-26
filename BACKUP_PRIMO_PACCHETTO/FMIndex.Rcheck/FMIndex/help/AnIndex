@@ -1,0 +1,9 @@
+FMIndex-package	FMIndex-package
+computeFMIndex	computeFMIndex
+FMIndex	FMIndex-package
+getBWTcharacter	getBWTcharacter
+getFcolumn	getFcolumn
+getLcolumn	getLcolumn
+getSuffix	getSuffix
+getTallyTable	getTallyTable
+getTallyTableLine	getTallyTableLine
