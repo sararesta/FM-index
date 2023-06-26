@@ -1,0 +1,10 @@
+test_that("Computing the FM index of a DNA sequence contained ina a fasta file",{
+  sequence <- unlist(Biostrings::readDNAStringSet("seq5.fasta"))
+  f.col <- c(1,56,56,57,71)
+  names(f.col) <- c(".","A","C","G","T")
+  l.col <- Biostrings::DNAString("AGTTGACATTGTATATTGGCGAACCTACCATAG.ACCGCCATGCTATCGCAGTCGAATGATGTTGAGGTAGTAGTTCGACAACATCATTTCTTATTAAATTGGCGATTGGTCACCCGTTGACCAAATTTCTAAGGGTTATCATCAGTACAGATTCCTCTATGTCTCTGGGTCAGGTACTTCTGCTCGAAGGGCTTCGCAGTTAAATGGTCCCAAGCCTCGGCCGTACACTTTGCGGCCGGG")
+  tally.table <- as.matrix(read.table("tally_table_complete_solution.txt",header=TRUE,sep="\t"))
+  solution <- list(f.col,l.col,tally.table)
+  names(solution) <- c("F_column","L_column","tally_table")
+  expect_equal(FMindex("seq5.fasta",""),solution)
+})
