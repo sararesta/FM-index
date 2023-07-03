@@ -2,24 +2,53 @@
 title: "FMIndex"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{FMIndex}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
+    %\VignetteIndexEntry{FMIndex}
+    %\VignetteEngine{knitr::rmarkdown}
+    %\VignetteEncoding{UTF-8}
 ---
 
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>"
-)
+```{r style, echo = FALSE, results = 'asis'}
+library(BiocStyle)
 ```
 
 ```{r setup}
 library(FMIndex)
 ```
 
-# Prova
+```{r, echo = FALSE}
+library(knitr)
+```
+
+# Introduction
+
+FM index is a very important tool for compressing data
+
+# FM index data structures
+
+## F column
 
 ```{r}
-print("hellooooo :)")
+getFcolumn(Biostrings::DNAString("ACCT"))
+```
+
+## L column
+
+```{r}
+getLcolumn(Biostrings::DNAString("AACCGT"))
+```
+
+## Tally table
+
+```{r}
+getTallyTable(Biostrings::DNAString("T.AACCG"))
+```
+
+```{r}
+getTallyTable(Biostrings::DNAString("T.AACCG"),2)
+```
+
+# Computing the FM index
+
+```{r}
+FMindex(system.file("extdata/vignettes/seq5.fasta",package="FMIndex"),"")
 ```

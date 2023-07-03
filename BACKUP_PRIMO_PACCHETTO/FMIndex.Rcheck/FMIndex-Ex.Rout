@@ -36,7 +36,7 @@ Type 'q()' to quit R.
 > 
 > ### ** Examples
 > 
-> FMindex(system.file("extdata/seq5.fasta",package="FMIndex"),"")
+> FMindex(system.file("extdata/examples/seq5.fasta",package="FMIndex"),"")
 $F_column
  .  A  C  G  T 
  1 56 56 57 71 
@@ -289,7 +289,7 @@ $tally_table
 [240,] 56 56 56 71
 [241,] 56 56 57 71
 
-> FMindex(system.file("extdata/seq5.fasta",package="FMIndex"),"",tallywidth=1)
+> FMindex(system.file("extdata/examples/seq5.fasta",package="FMIndex"),"",tallywidth=1)
 $F_column
  .  A  C  G  T 
  1 56 56 57 71 
@@ -620,7 +620,7 @@ seq: T.AACCG
 > cleanEx()
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  4.849 0.46 7.318 0 0 
+Time elapsed:  4.735 0.383 7.095 0 0 
 > grDevices::dev.off()
 null device 
           1 

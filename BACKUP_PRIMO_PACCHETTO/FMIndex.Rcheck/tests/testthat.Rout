@@ -22,4 +22,4 @@ Loading required package: FMIndex
 > 
 > proc.time()
    user  system elapsed 
-  4.506   0.522   6.106 
+  4.357   0.271   5.614 

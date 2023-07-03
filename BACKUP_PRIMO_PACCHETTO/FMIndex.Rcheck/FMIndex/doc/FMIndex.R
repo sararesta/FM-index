@@ -1,12 +1,24 @@
-## ---- include = FALSE---------------------------------------------------------
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>"
-)
+## ----style, echo = FALSE, results = 'asis'------------------------------------
+library(BiocStyle)
 
 ## ----setup--------------------------------------------------------------------
 library(FMIndex)
 
+## ---- echo = FALSE------------------------------------------------------------
+library(knitr)
+
 ## -----------------------------------------------------------------------------
-print("hellooooo :)")
+getFcolumn(Biostrings::DNAString("ACCT"))
+
+## -----------------------------------------------------------------------------
+getLcolumn(Biostrings::DNAString("AACCGT"))
+
+## -----------------------------------------------------------------------------
+getTallyTable(Biostrings::DNAString("T.AACCG"))
+
+## -----------------------------------------------------------------------------
+getTallyTable(Biostrings::DNAString("T.AACCG"),2)
+
+## -----------------------------------------------------------------------------
+FMindex(system.file("extdata/vignettes/seq5.fasta",package="FMIndex"),"")
 

@@ -15,12 +15,12 @@
 #' @importClassesFrom Biostrings DNAString
 #' 
 getFcolumn <- function(seq,includeTerminationCharacter=TRUE){
-  alphabet <- names(which(alphabetFrequency(seq,baseOnly=FALSE,as.prob=FALSE)!=0))
-  alphabet <- alphabet[alphabet!="."]
-  f.col <- letterFrequency(seq,alphabet)
-  if(includeTerminationCharacter==TRUE){
-    f.col <- c(1,f.col)
-    names(f.col)[1] <- "."
-  }
-  return(f.col)
+    alphabet <- names(which(alphabetFrequency(seq,baseOnly=FALSE,as.prob=FALSE)!=0))
+    alphabet <- alphabet[alphabet!="."]
+    f.col <- letterFrequency(seq,alphabet)
+    if(includeTerminationCharacter==TRUE){
+        f.col <- c(1,f.col)
+        names(f.col)[1] <- "."
+    }
+    return(f.col)
 }

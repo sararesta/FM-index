@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.9)  26 JUN 2023 12:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.9)  28 JUN 2023 19:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -329,15 +329,15 @@ LaTeX Info: Redefining \nameref on input line 8.
 \@outlinefile=\write4
 \openout4 = `Rd2.out'.
 
-LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 32
+LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 33
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/inconsolata/t1zi4.fd
 File: t1zi4.fd 2018/01/14 T1/zi4 (Inconsolata)
 )
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 10.0pt on input line 32.
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 34
+(Font)              scaled to size 10.0pt on input line 33.
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 35
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
@@ -355,13 +355,13 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 57--59
+Underfull \hbox (badness 10000) in paragraph at lines 58--60
 
  []
 
 [2]
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 9.0pt on input line 90.
+(Font)              scaled to size 9.0pt on input line 91.
  [3] [4] [5] (./Rd2.ind [6]
 
 LaTeX Font Warning: Font shape `T1/zi4/m/it' undefined
@@ -380,7 +380,7 @@ Package rerunfilecheck Info: File `Rd2.out' has not changed.
 Here is how much of TeX's memory you used:
  9151 strings out of 480247
  142095 string characters out of 5896152
- 430796 words of memory out of 5000000
+ 431796 words of memory out of 5000000
  26894 multiletter control sequences out of 15000+600000
  503508 words of font info for 61 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -392,7 +392,7 @@ xmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/ti
 mes/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (7 pages, 90288 bytes).
+Output written on Rd2.pdf (7 pages, 90318 bytes).
 PDF statistics:
  189 PDF objects out of 1000 (max. 8388607)
  166 compressed objects within 2 object streams

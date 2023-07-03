@@ -6,6 +6,7 @@ Authors@R:
            comment = c(ORCID = "YOUR-ORCID-ID"))
 Description: The package computes the FM index of a DNA string contained in a fasta file.
              The user can specify the path where he wants to save the FM index data structures.
+	     The results will be also printed on the console.
 Imports: Biostrings, utils
 Suggests: knitr, rmarkdown, BiocStyle, testthat
 License: GPL-2
@@ -16,7 +17,7 @@ VignetteBuilder: knitr
 biocViews: Normalization, Preprocessing
 Depends: R (>= 2.10)
 NeedsCompilation: no
-Packaged: 2023-06-26 10:34:27 UTC; sara
+Packaged: 2023-06-28 17:12:51 UTC; sara
 Author: Sara Resta [aut, cre] (YOUR-ORCID-ID)
 Maintainer: Sara Resta <sara.resta@mail.polimi.it>
-Built: R 4.1.2; ; 2023-06-26 10:35:30 UTC; unix
+Built: R 4.1.2; ; 2023-06-28 17:13:08 UTC; unix
