@@ -27,7 +27,7 @@ FMindex <- function(fastafile,usrpath,tallywidth=1,includeTerminationCharacter=T
     
     FM <- list(f.col,l.col,tally.table)
     names(FM) <- c("F_column","L_column","tally_table")
-     
+    
     write.table(t(as.matrix(f.col)), file = f.col.filepath, sep = "\t", row.names = FALSE)
     write(as.character(l.col),file=l.col.filepath)
     write.table(tally.table, file = tally.table.filepath, sep = "\t", row.names = FALSE,col.names = TRUE)
