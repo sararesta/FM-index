@@ -10,3 +10,5 @@ echo "build, check and install the package"
 R CMD build FMIndex
 R CMD check FMIndex_0.99.0.tar.gz
 R CMD INSTALL FMIndex_0.99.0.tar.gz
+
+Rscript "bioccheck.R"
