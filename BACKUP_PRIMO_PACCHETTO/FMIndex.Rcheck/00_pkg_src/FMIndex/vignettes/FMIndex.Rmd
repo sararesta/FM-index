@@ -1,8 +1,10 @@
 ---
-title: "FMIndex"
+title: "FM Index of a DNA sequence contained in a FASTA file"
+author: "Sara Resta"
+date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-    %\VignetteIndexEntry{FMIndex}
+    %\VignetteIndexEntry{FM Index of a DNA sequence contained in a FASTA file}
     %\VignetteEngine{knitr::rmarkdown}
     %\VignetteEncoding{UTF-8}
 ---

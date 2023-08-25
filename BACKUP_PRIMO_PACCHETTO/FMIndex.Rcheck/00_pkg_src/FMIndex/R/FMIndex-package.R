@@ -1,5 +1,7 @@
-#' FMIndex - Computer the FM index for a DNA sequence contained in a fasta file
-#' The \code{FMIndex} package implements all the functions necessary to compute the data structures of the FM index
+#' FMIndex - Computer the FM index for a DNA sequence 
+#' contained in a fasta file
+#' The \code{FMIndex} package implements all the functions necessary to compute
+#'  the data structures of the FM index
 #' 
 #' \tabular{ll}{
 #' Package: \tab FMIndex\cr

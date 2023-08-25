@@ -7,9 +7,12 @@
 FMindex(fastafile, usrpath, tallywidth = 1, includeTerminationCharacter = TRUE)
 }
 \arguments{
-\item{fastafile}{The .fasta file containing one single DNA sequence, files containing multiple sequences are not allowed}
+\item{fastafile}{The .fasta file containing one single DNA sequence,
+files containing multiple sequences are not allowed}
 
-\item{usrpath}{The directory path where the user wants to save the files: it must end with '/' (you can leave it empty if you want to save the files in your working directory).}
+\item{usrpath}{The directory path where the user wants to save the files:
+it must end with '/' (you can leave it empty if you want to save the files
+in your working directory).}
 
 \item{tallywidth}{How you want to compress the tally table. Default value=1}
 
@@ -19,9 +22,11 @@ FMindex(fastafile, usrpath, tallywidth = 1, includeTerminationCharacter = TRUE)
 A list containint all the data structures necessary for the FM index
 }
 \description{
-This function writes the FM index of the DNA sequence contained in the .fasta file given in input
+This function writes the FM index of the DNA sequence contained in the
+.fasta file given in input
 }
 \examples{
 FMindex(system.file("extdata/examples/seq5.fasta",package="FMIndex"),"")
-FMindex(system.file("extdata/examples/seq5.fasta",package="FMIndex"),"",tallywidth=1)
+FMindex(system.file(
+"extdata/examples/seq5.fasta",package="FMIndex"),"",tallywidth=1)
 }

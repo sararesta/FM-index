@@ -15,5 +15,6 @@ getSuffix(index, sequence)
 The substring starting at the given position
 }
 \description{
-This function gets the suffix of the string starting from a position given in input
+This function gets the suffix of the string starting from a position given
+in input
 }

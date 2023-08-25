@@ -4,8 +4,10 @@
 \name{FMIndex-package}
 \alias{FMIndex-package}
 \alias{FMIndex}
-\title{FMIndex - Computer the FM index for a DNA sequence contained in a fasta file
-The \code{FMIndex} package implements all the functions necessary to compute the data structures of the FM index}
+\title{FMIndex - Computer the FM index for a DNA sequence
+contained in a fasta file
+The \code{FMIndex} package implements all the functions necessary to compute
+the data structures of the FM index}
 \description{
 \tabular{ll}{
 Package: \tab FMIndex\cr

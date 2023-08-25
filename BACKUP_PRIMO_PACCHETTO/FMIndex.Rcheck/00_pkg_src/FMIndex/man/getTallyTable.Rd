@@ -9,7 +9,8 @@ getTallyTable(l.col, rowwidth = 1)
 \arguments{
 \item{l.col}{A DNAString containing the L column of the FM index}
 
-\item{rowwidth}{Step for saving rows of the tally table. The default value is 1 which corresponds to save all the rows of the tally table}
+\item{rowwidth}{Step for saving rows of the tally table. The default
+value is 1 which corresponds to save all the rows of the tally table}
 }
 \value{
 The tally table of the input sequence

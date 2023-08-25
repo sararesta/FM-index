@@ -9,10 +9,12 @@ getFcolumn(seq, includeTerminationCharacter = TRUE)
 \arguments{
 \item{seq}{the DNAString to be analysed}
 
-\item{includeTerminationCharacter}{True if you want to include the ".", false if you want to exclude it. Default value:TRUE}
+\item{includeTerminationCharacter}{True if you want to include the ".",
+false if you want to exclude it. Default value:TRUE}
 }
 \value{
-An integer vector with all the frequences in the dna sequence given in input
+An integer vector with all the frequences
+in the dna sequence given in input
 }
 \description{
 This function gets a DNAString and gives the F column of the FM index

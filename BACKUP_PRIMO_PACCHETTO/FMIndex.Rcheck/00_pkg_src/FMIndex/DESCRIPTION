@@ -15,8 +15,8 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
 VignetteBuilder: knitr
 biocViews: Normalization, Preprocessing
-Depends: R (>= 2.10)
+Depends: R (>= 3.6)
 NeedsCompilation: no
-Packaged: 2023-08-24 09:40:18 UTC; sara
+Packaged: 2023-08-25 16:14:57 UTC; sara
 Author: Sara Resta [aut, cre] (YOUR-ORCID-ID)
 Maintainer: Sara Resta <sara.resta@mail.polimi.it>

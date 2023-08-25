@@ -11,7 +11,8 @@ getBWTcharacter(index, sequence, suffixarray)
 
 \item{sequence}{The string you want to know the i-th L column character}
 
-\item{suffixarray}{An integer vector containing the suffix array of the input string}
+\item{suffixarray}{An integer vector containing the suffix array of the
+input string}
 }
 \value{
 A character containing the i-th character of the input sequence

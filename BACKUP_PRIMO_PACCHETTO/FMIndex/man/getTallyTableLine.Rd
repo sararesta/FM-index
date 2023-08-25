@@ -7,11 +7,13 @@
 getTallyTableLine(index, l.col, alphabet)
 }
 \arguments{
-\item{index}{An integer representing the index of the i-th row you want to build}
+\item{index}{An integer representing the index of the i-th row you want
+to build}
 
 \item{l.col}{A DNAString object containing the L column of the FM index}
 
-\item{alphabet}{A character vector containing the alphabet to consider in counting the elements}
+\item{alphabet}{A character vector containing the alphabet to consider in
+counting the elements}
 }
 \value{
 the i-th row of the Tally Table
