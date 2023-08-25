@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.9)  25 AUG 2023 18:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.9)  25 AUG 2023 20:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -361,7 +361,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 58--60
 
 [2]
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 9.0pt on input line 95.
+(Font)              scaled to size 9.0pt on input line 104.
  [3] [4] [5] (./Rd2.ind [6]
 
 LaTeX Font Warning: Font shape `T1/zi4/m/it' undefined
@@ -375,13 +375,13 @@ LaTeX Font Warning: Font shape `T1/zi4/m/it' undefined
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `Rd2.out' has not changed.
-(rerunfilecheck)             Checksum: 57F3315C1BC059AE379EAD391706AE47;968.
+(rerunfilecheck)             Checksum: 00AE0F327B64E64699C8F84EA0F05DDF;1039.
  ) 
 Here is how much of TeX's memory you used:
- 9151 strings out of 480247
- 142095 string characters out of 5896152
- 431796 words of memory out of 5000000
- 26894 multiletter control sequences out of 15000+600000
+ 9159 strings out of 480247
+ 142183 string characters out of 5896152
+ 431798 words of memory out of 5000000
+ 26895 multiletter control sequences out of 15000+600000
  503508 words of font info for 61 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  77i,5n,79p,288b,616s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -392,10 +392,10 @@ xmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/ti
 mes/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (7 pages, 90230 bytes).
+Output written on Rd2.pdf (7 pages, 90077 bytes).
 PDF statistics:
- 189 PDF objects out of 1000 (max. 8388607)
- 166 compressed objects within 2 object streams
- 64 named destinations out of 1000 (max. 500000)
- 73 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 202 PDF objects out of 1000 (max. 8388607)
+ 179 compressed objects within 2 object streams
+ 71 named destinations out of 1000 (max. 500000)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
 

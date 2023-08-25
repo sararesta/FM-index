@@ -2,7 +2,7 @@
 #' 
 #' This function gets a character and gives the F column of the FM index
 #' 
-#' @param sequence the string to be analysed
+#' @param sequence the DNAString to be analysed
 #' @return A DNAString containing the L column of the FM index
 #' @examples
 #' getLcolumn(Biostrings::DNAString("ACGT"))
@@ -11,14 +11,33 @@
 #' @importFrom Biostrings DNAString
 #' @importClassesFrom Biostrings DNAString
 getLcolumn <- function(sequence){
-    sequence <- paste(as.character(sequence),".",sep="")
-    indexes <- as.matrix(seq(seq_len(nchar(sequence))))
-    suffixes <- apply(indexes,1,getSuffix,sequence=sequence)
+    seq_char <- paste(as.character(sequence),".",sep="")
+    indexes <- as.matrix(seq(seq_len(nchar(seq_char))))
+    suffix.array <- getSA(sequence)
+    bwt <- apply(indexes,1,getBWTcharacter,
+                sequence=seq_char,suffixarray=suffix.array)
+    return(DNAString(paste(bwt,collapse="")))
+}
+
+#' Compute the suffix array of a string
+#' 
+#' This function computes the suffix array of a given string
+#' 
+#' @param sequence a DNAString representing the string
+#' sequence
+#' @return An integer array containing the suffix array
+#' @examples
+#' getSA(Biostrings::DNAString("ACGT"))
+#' getSA(Biostrings::DNAString("AACCGT"))
+#' @export
+#'
+getSA <- function(sequence){
+    seq_char <- paste(as.character(sequence),".",sep="")
+    indexes <- as.matrix(seq(seq_len(nchar(seq_char))))
+    suffixes <- apply(indexes,1,getSuffix,sequence=seq_char)
     names(suffixes) <- indexes
     suffix.array <- as.integer(names(sort(suffixes)))
-    bwt <- apply(indexes,1,getBWTcharacter,
-                sequence=sequence,suffixarray=suffix.array)
-    return(DNAString(paste(bwt,collapse="")))
+    return(suffix.array)
 }
 
 #' Get the suffix

@@ -587,6 +587,25 @@ seq: T.AACCG
 > 
 > 
 > cleanEx()
+> nameEx("getSA")
+> ### * getSA
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: getSA
+> ### Title: Compute the suffix array of a string
+> ### Aliases: getSA
+> 
+> ### ** Examples
+> 
+> getSA(Biostrings::DNAString("ACGT"))
+[1] 5 1 2 3 4
+> getSA(Biostrings::DNAString("AACCGT"))
+[1] 7 1 2 3 4 5 6
+> 
+> 
+> 
+> cleanEx()
 > nameEx("getTallyTable")
 > ### * getTallyTable
 > 
@@ -621,7 +640,7 @@ seq: T.AACCG
 > cleanEx()
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  5.032 0.396 7.426 0 0 
+Time elapsed:  4.97 0.41 7.559 0 0 
 > grDevices::dev.off()
 null device 
           1 

@@ -11,6 +11,8 @@
 #' in your working directory).
 #' @param tallywidth How you want to compress the tally table. Default value=1
 #' @param includeTerminationCharacter default value: true
+#' @param includeSA set it to TRUE if you want to print also the
+#' suffix array.
 #' @return A list containint all the data structures necessary for the FM index
 #' @examples 
 #' FMindex(system.file("extdata/examples/seq5.fasta",package="FMIndex"),"")
@@ -20,7 +22,8 @@
 #' @importFrom Biostrings readDNAStringSet
 #' @importFrom utils write.table
 FMindex <- function(fastafile,usrpath,tallywidth=1,
-                    includeTerminationCharacter=TRUE){
+                    includeTerminationCharacter=TRUE,
+                    includeSA=FALSE){
     seqset <- readDNAStringSet(fastafile,use.names=FALSE)
     sequence <- unlist(seqset)
     f.col <- getFcolumn(unlist(sequence))
@@ -39,6 +42,11 @@ FMindex <- function(fastafile,usrpath,tallywidth=1,
     write(as.character(l.col),file=l.col.filepath)
     write.table(tally.table, file = tally.table.filepath, 
                 sep = "\t", row.names = FALSE,col.names = TRUE)
+    if(includeSA==TRUE){
+      SA.filepath <- paste(usrpath,"SA.txt",collapse="",sep="")
+      SA <- getSA(sequence)
+      write(SA,file=SA.filepath)
+    }
     
     return(FM)
 }

@@ -3,6 +3,7 @@
 export(FMindex)
 export(getFcolumn)
 export(getLcolumn)
+export(getSA)
 export(getTallyTable)
 importClassesFrom(Biostrings,DNAString)
 importFrom(Biostrings,DNAString)

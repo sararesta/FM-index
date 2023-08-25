@@ -58,6 +58,23 @@ getLcolumn(Biostrings::DNAString("AACCGT"))
 
 
 cleanEx()
+nameEx("getSA")
+### * getSA
+
+flush(stderr()); flush(stdout())
+
+### Name: getSA
+### Title: Compute the suffix array of a string
+### Aliases: getSA
+
+### ** Examples
+
+getSA(Biostrings::DNAString("ACGT"))
+getSA(Biostrings::DNAString("AACCGT"))
+
+
+
+cleanEx()
 nameEx("getTallyTable")
 ### * getTallyTable
 

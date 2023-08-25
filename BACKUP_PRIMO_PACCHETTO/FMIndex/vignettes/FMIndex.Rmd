@@ -29,17 +29,23 @@ FM index is a very important tool for compressing data
 
 ## F column
 
+The F column is given as a integer, the names of the elements are the characters of the sequence.
+
 ```{r}
 getFcolumn(Biostrings::DNAString("ACCT"))
 ```
 
 ## L column
 
+The L column is the Burrows-Wheeler transformation of the give sequence. The function returns a DNAString.
+
 ```{r}
 getLcolumn(Biostrings::DNAString("AACCGT"))
 ```
 
 ## Tally table
+
+The Tally table contains
 
 ```{r}
 getTallyTable(Biostrings::DNAString("T.AACCG"))
@@ -49,8 +55,20 @@ getTallyTable(Biostrings::DNAString("T.AACCG"))
 getTallyTable(Biostrings::DNAString("T.AACCG"),2)
 ```
 
+## Suffix Array
+
+Sometimes the suffix array is included in the FM index to speed up the computation.
+
+```{r}
+getSA(Biostrings::DNAString("ACGTTC"))
+```
+
 # Computing the FM index
 
 ```{r}
 FMindex(system.file("extdata/vignettes/seq5.fasta",package="FMIndex"),"")
+```
+
+```{r}
+FMindex(system.file("extdata/vignettes/seq5.fasta",package="FMIndex"),"",includeSA=TRUE)
 ```
