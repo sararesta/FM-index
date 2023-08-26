@@ -16,7 +16,9 @@ getLcolumn <- function(sequence){
     suffix.array <- getSA(sequence)
     bwt <- apply(indexes,1,getBWTcharacter,
                 sequence=seq_char,suffixarray=suffix.array)
-    return(DNAString(paste(bwt,collapse="")))
+    results <- list(Biostrings::DNAString(paste(bwt,collapse="")),suffix.array)
+    names(results) <- c("bwt","suffix_array")
+    return(results)
 }
 
 #' Compute the suffix array of a string
