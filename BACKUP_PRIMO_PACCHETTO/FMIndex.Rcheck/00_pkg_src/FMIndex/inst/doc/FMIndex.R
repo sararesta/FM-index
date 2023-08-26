@@ -20,11 +20,8 @@ getTallyTable(Biostrings::DNAString("T.AACCG"))
 getTallyTable(Biostrings::DNAString("T.AACCG"),2)
 
 ## -----------------------------------------------------------------------------
-getSA(Biostrings::DNAString("ACGTTC."))
+getSA(Biostrings::DNAString("ACGTTC"))
 
 ## -----------------------------------------------------------------------------
 FMindex(system.file("extdata/vignettes/seq5.fasta",package="FMIndex"),"")
-
-## -----------------------------------------------------------------------------
-FMindex(system.file("extdata/vignettes/seq5.fasta",package="FMIndex"),"",includeSA=TRUE)
 

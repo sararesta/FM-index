@@ -18,8 +18,8 @@ Type 'q()' to quit R.
 > library(testthat)
 > test_check("FMIndex")
 Loading required package: FMIndex
-[ FAIL 0 | WARN 0 | SKIP 0 | PASS 6 ]
+[ FAIL 0 | WARN 0 | SKIP 0 | PASS 8 ]
 > 
 > proc.time()
    user  system elapsed 
-  4.491   0.304   5.876 
+  4.925   0.362   6.426 

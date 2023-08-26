@@ -4,13 +4,7 @@
 \alias{FMindex}
 \title{Writes the FM index}
 \usage{
-FMindex(
-  fastafile,
-  usrpath,
-  tallywidth = 1,
-  includeTerminationCharacter = TRUE,
-  includeSA = FALSE
-)
+FMindex(fastafile, usrpath, tallywidth = 1, includeEndChar = TRUE)
 }
 \arguments{
 \item{fastafile}{The .fasta file containing one single DNA sequence,
@@ -22,10 +16,7 @@ in your working directory).}
 
 \item{tallywidth}{How you want to compress the tally table. Default value=1}
 
-\item{includeTerminationCharacter}{default value: true}
-
-\item{includeSA}{set it to TRUE if you want to print also the
-suffix array.}
+\item{includeEndChar}{default value: true}
 }
 \value{
 A list containint all the data structures necessary for the FM index
