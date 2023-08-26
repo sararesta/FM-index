@@ -14,7 +14,7 @@
 #' @importFrom Biostrings DNAString
 
 getTallyTableLine <- function(index,l.col,alphabet){
-    return(letterFrequency(l.col[seq_len(index)],alphabet))
+    return(Biostrings::letterFrequency(l.col[seq_len(index)],alphabet))
 }
 
 #'
@@ -34,7 +34,7 @@ getTallyTableLine <- function(index,l.col,alphabet){
 getTallyTable <- function(l.col,rowwidth=1){
     indexes <- as.matrix(seq(1,length(l.col),rowwidth))
     alphabet <- names(which(
-        alphabetFrequency(l.col,as.prob=FALSE,baseOnly=FALSE)!=0))
+        Biostrings::alphabetFrequency(l.col,as.prob=FALSE,baseOnly=FALSE)!=0))
     alphabet <- alphabet[alphabet!="."]
     return(t(apply(indexes,1,getTallyTableLine,l.col=l.col,alphabet=alphabet)))
 }
