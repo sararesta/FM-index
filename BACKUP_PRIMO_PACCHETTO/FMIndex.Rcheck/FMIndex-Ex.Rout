@@ -621,7 +621,7 @@ seq: T.AACCG
 > cleanEx()
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  5.032 0.396 7.426 0 0 
+Time elapsed:  2.324 0.178 3.193 0 0 
 > grDevices::dev.off()
 null device 
           1 
