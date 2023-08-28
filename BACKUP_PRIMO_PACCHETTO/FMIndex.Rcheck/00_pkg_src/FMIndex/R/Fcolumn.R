@@ -17,6 +17,9 @@
 #' @importClassesFrom Biostrings DNAString
 #' 
 getFcolumn <- function(seq,includeTerminationCharacter=TRUE){
+    if(length(seq)<1){
+        warning("The input sequence is empty.")
+    }
     alphabet <- names(which(
         Biostrings::alphabetFrequency(seq,baseOnly=FALSE,as.prob=FALSE)!=0))
     alphabet <- alphabet[alphabet!="."]
