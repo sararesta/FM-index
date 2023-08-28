@@ -25,8 +25,14 @@ A list containint all the data structures necessary for the FM index
 This function writes the FM index of the DNA sequence contained in the
 .fasta file given in input
 }
+\details{
+This function may raise an error if:
+- The FASTA file provided contains more than one sequence
+- The FASTA file provided contains no sequences
+- The sequence of the FASTA file provided is empty
+}
 \examples{
-FMindex(system.file("extdata/examples/seq5.fasta",package="FMIndex"),"")
+FMindex(system.file("extdata/examples/seq.fasta",package="FMIndex"),"")
 FMindex(system.file(
-"extdata/examples/seq5.fasta",package="FMIndex"),"",tallywidth=1)
+"extdata/examples/seq.fasta",package="FMIndex"),"",tallywidth=1)
 }

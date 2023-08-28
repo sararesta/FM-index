@@ -32,6 +32,17 @@ getTallyTableLine <- function(index,l.col,alphabet){
 #' @export
 #' @importFrom Biostrings alphabetFrequency
 getTallyTable <- function(l.col,rowwidth=1){
+    
+    if(rowwidth<1){
+        stop("rowwidth must be higher than one.")
+    } else if(Biostrings::letterFrequency(l.col,c("."))>1){
+        stop("The input sequence contains more than one termination character")
+    } else if(Biostrings::letterFrequency(l.col,c("."))==0){
+        stop("The input sequence doesn't contain the termination character")
+    } else if(length(l.col)==1){
+        warning("The input sequence contains only the termination character")
+    }
+    
     indexes <- as.matrix(seq(1,length(l.col),rowwidth))
     alphabet <- names(which(
         Biostrings::alphabetFrequency(l.col,as.prob=FALSE,baseOnly=FALSE)!=0))

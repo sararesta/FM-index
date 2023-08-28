@@ -4,12 +4,12 @@
 \alias{getFcolumn}
 \title{Compute the F column}
 \usage{
-getFcolumn(seq, includeTerminationCharacter = TRUE)
+getFcolumn(seq, includeEndChar = TRUE)
 }
 \arguments{
 \item{seq}{the DNAString to be analysed}
 
-\item{includeTerminationCharacter}{True if you want to include the ".",
+\item{includeEndChar}{True if you want to include the ".",
 false if you want to exclude it. Default value:TRUE}
 }
 \value{

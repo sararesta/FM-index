@@ -11,6 +11,11 @@
 #' @importFrom Biostrings DNAString
 #' @importClassesFrom Biostrings DNAString
 getLcolumn <- function(sequence){
+    
+    if(length(sequence)<1){
+        warning("The input sequence is empty.")
+    }
+    
     seq_char <- paste(as.character(sequence),".",sep="")
     indexes <- as.matrix(seq(seq_len(nchar(seq_char))))
     suffix.array <- getSA(sequence)
@@ -34,6 +39,9 @@ getLcolumn <- function(sequence){
 #' @export
 #'
 getSA <- function(sequence){
+    if(length(sequence)<1){
+        warning("The input sequence is empty.")
+    }
     seq_char <- paste(as.character(sequence),".",sep="")
     indexes <- as.matrix(seq(seq_len(nchar(seq_char))))
     suffixes <- apply(indexes,1,getSuffix,sequence=seq_char)

@@ -13,16 +13,31 @@
 #' @param includeEndChar default value: true
 #' @return A list containint all the data structures necessary for the FM index
 #' @examples 
-#' FMindex(system.file("extdata/examples/seq5.fasta",package="FMIndex"),"")
+#' FMindex(system.file("extdata/examples/seq.fasta",package="FMIndex"),"")
 #' FMindex(system.file(
-#' "extdata/examples/seq5.fasta",package="FMIndex"),"",tallywidth=1)
+#' "extdata/examples/seq.fasta",package="FMIndex"),"",tallywidth=1)
+#' @details
+#' This function may raise an error if:
+#'     - The FASTA file provided contains more than one sequence
+#'     - The FASTA file provided contains no sequences
+#'     - The sequence of the FASTA file provided is empty
 #' @export
 #' @importFrom Biostrings readDNAStringSet
 #' @importFrom utils write.table
 FMindex <- function(fastafile,usrpath,tallywidth=1,includeEndChar=TRUE){
     seqset <- Biostrings::readDNAStringSet(fastafile,use.names=FALSE)
+    if(length(seqset)>1){
+        stop("The FASTA file provided contains more than one sequence")
+    } else if(length(seqset)<1){
+        stop("The FASTA file provided has no sequences")
+    }
+    
     sequence <- unlist(seqset)
-    f.col <- getFcolumn(unlist(sequence))
+    if(length(unlist(sequence))<1){
+        warning("The sequence in the FASTA file is empty")
+    }
+    
+    f.col <- getFcolumn(unlist(sequence),includeEndChar)
     res.list <- getLcolumn(sequence)
     l.col <- res.list[["bwt"]]
     l.col <- unlist(l.col)
@@ -31,7 +46,7 @@ FMindex <- function(fastafile,usrpath,tallywidth=1,includeEndChar=TRUE){
     
     f.col.filepath <- paste(usrpath,"F_col.txt",collapse="",sep="")
     l.col.filepath <- paste(usrpath,"L_col.txt",collapse="",sep="")
-    SA.filepath <- paste(usrpath,"suffix_array.txt",collapse="",sep="")
+    SA.filepath <- paste(usrpath,"suffix_array.txt",collapse=",",sep="")
     tally.table.filepath <- paste(usrpath,"tally_table.txt",collapse="",sep="")
     
     FM <- list(f.col,l.col,SA,tally.table)

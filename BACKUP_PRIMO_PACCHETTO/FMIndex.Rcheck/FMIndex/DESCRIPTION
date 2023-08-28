@@ -17,7 +17,7 @@ VignetteBuilder: knitr
 biocViews: Normalization, Preprocessing
 Depends: R (>= 3.6)
 NeedsCompilation: no
-Packaged: 2023-08-26 13:21:25 UTC; sara
+Packaged: 2023-08-28 10:09:19 UTC; sara
 Author: Sara Resta [aut, cre] (YOUR-ORCID-ID)
 Maintainer: Sara Resta <sara.resta@mail.polimi.it>
-Built: R 4.1.2; ; 2023-08-26 13:21:43 UTC; unix
+Built: R 4.1.2; ; 2023-08-28 10:09:28 UTC; unix

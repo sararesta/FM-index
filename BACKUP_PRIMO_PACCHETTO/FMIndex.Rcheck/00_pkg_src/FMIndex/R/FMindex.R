@@ -37,7 +37,7 @@ FMindex <- function(fastafile,usrpath,tallywidth=1,includeEndChar=TRUE){
         warning("The sequence in the FASTA file is empty")
     }
     
-    f.col <- getFcolumn(unlist(sequence))
+    f.col <- getFcolumn(unlist(sequence),includeEndChar)
     res.list <- getLcolumn(sequence)
     l.col <- res.list[["bwt"]]
     l.col <- unlist(l.col)

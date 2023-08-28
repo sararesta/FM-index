@@ -11,3 +11,15 @@ test_that("Computing the compressed Tally Table a DNA string which is a BWT",{
     colnames(solution) <- c("A","C","G","T")
     expect_equal(getTallyTable(bwt,rowwidth=2),solution)
 })
+
+test_that("Testing error condition",{
+    bwt <- Biostrings::DNAString("GT.AACCTG")
+    expect_error(getTallyTable(bwt,rowwidth=0),"rowwidth must be higher than one.")
+})
+
+test_that("Testing error condition",{
+  bwt <- Biostrings::DNAString("")
+  expect_error(getTallyTable(bwt),
+               "The input sequence doesn't contain the termination character")
+})
+
