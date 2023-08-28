@@ -17,9 +17,9 @@ flush(stderr()); flush(stdout())
 
 ### ** Examples
 
-FMindex(system.file("extdata/examples/seq5.fasta",package="FMIndex"),"")
+FMindex(system.file("extdata/examples/seq.fasta",package="FMIndex"),"")
 FMindex(system.file(
-"extdata/examples/seq5.fasta",package="FMIndex"),"",tallywidth=1)
+"extdata/examples/seq.fasta",package="FMIndex"),"",tallywidth=1)
 
 
 
