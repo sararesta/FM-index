@@ -1,4 +1,0 @@
-## Version 0.99.0 (2023-08-25)
-
-- First version of the package
-- Can get BWT, SA, FM-index from a sequence contained in a fasta file
