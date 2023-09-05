@@ -4,10 +4,8 @@
 \name{FMIndex-package}
 \alias{FMIndex-package}
 \alias{FMIndex}
-\title{FMIndex - Computer the FM index for a DNA sequence
-contained in a fasta file
-The \code{FMIndex} package implements all the functions necessary to compute
-the data structures of the FM index}
+\title{FMIndex - Compute the FM index for a DNA sequence
+contained in a fasta file}
 \description{
 \tabular{ll}{
 Package: \tab FMIndex\cr
@@ -16,9 +14,24 @@ Date: \tab 2023-06-20\cr
 License: \tab GPL (>=2)\cr
 }
 }
-\references{
-\url{http://some.url/here/maybe/}\cr
-Resta et al.\cr
+\details{
+The \code{FMIndex} package implements all the functions necessary to compute
+the data structures of the FM index. The package has one main function
+which computes all the FM index data structures and saves them into different
+text files (the path is specified by the user):
+\itemize{
+\item F_col.txt for the F column (cont the occurrences of the unique
+characters)
+\item L_col.txt for the L column (BWT)
+\item suffix_array.txt for the suffix array
+\item tally_table.txt for the tally table
+}
+The functions that compute the FM index data structures are available: they
+all take a DNAString as input and the return values are printed on the
+console.
+
+NOTE: to make the strings compatible with DNAString objects the termination
+character used to build the BWT is "."
 }
 \author{
 Sara Resta [aut, cre]\cr

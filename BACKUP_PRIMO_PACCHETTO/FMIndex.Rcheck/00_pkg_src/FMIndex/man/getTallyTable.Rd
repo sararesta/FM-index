@@ -9,14 +9,30 @@ getTallyTable(l.col, rowwidth = 1)
 \arguments{
 \item{l.col}{A DNAString containing the L column of the FM index}
 
-\item{rowwidth}{Step for saving rows of the tally table. The default
-value is 1 which corresponds to save all the rows of the tally table}
+\item{rowwidth}{Step (in term of numer of rows) for saving checkpoints of the
+tally table. The default value is 1 which corresponds to save all the rows of
+the tally table}
 }
 \value{
 The tally table of the input sequence
 }
 \description{
 Creates the Tally Table of a given BWT of a string
+}
+\details{
+This function may raise an error if
+\itemize{
+\item The argument rowwidth is higher than one
+\item The argument rowwidth is lower than one
+\item The input sequence (argument l.col) doesn't contain the termination
+character "."
+\item The input sequence (argument l.col) contains more than one
+termination character "."
+}
+This function may raise a warning if
+\itemize{
+\item The input sequence contains only the termination character
+}
 }
 \examples{
 getTallyTable(Biostrings::DNAString("T.AACCG"))

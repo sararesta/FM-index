@@ -2,7 +2,7 @@
 % Please edit documentation in R/TallyTable.R
 \name{getTallyTableLine}
 \alias{getTallyTableLine}
-\title{Create the i-th row of the Tally Table}
+\title{Helper function: create the i-th row of the Tally Table}
 \usage{
 getTallyTableLine(index, l.col, alphabet)
 }
@@ -19,5 +19,9 @@ counting the elements}
 the i-th row of the Tally Table
 }
 \description{
-This function creates the i-th row of the Tally Table
+This is a helper function that performs a specific task for the main function
+\code{\link{getTallyTable}}. It creates the i-th row of the Tally Table
+}
+\seealso{
+{\link{getTallyTable}}
 }

@@ -4,12 +4,12 @@
 \alias{getFcolumn}
 \title{Compute the F column}
 \usage{
-getFcolumn(seq, includeTerminationCharacter = TRUE)
+getFcolumn(seq, includeEndChar = TRUE)
 }
 \arguments{
 \item{seq}{the DNAString to be analysed}
 
-\item{includeTerminationCharacter}{True if you want to include the ".",
+\item{includeEndChar}{True if you want to include the ".",
 false if you want to exclude it. Default value:TRUE}
 }
 \value{
@@ -18,6 +18,12 @@ in the dna sequence given in input
 }
 \description{
 This function gets a DNAString and gives the F column of the FM index
+}
+\details{
+This function may raise a warning if
+\itemize{
+\item The provided sequence is empty
+}
 }
 \examples{
 getFcolumn(Biostrings::DNAString("ACCT"))

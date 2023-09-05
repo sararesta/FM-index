@@ -2,7 +2,7 @@
 % Please edit documentation in R/Lcolumn.R
 \name{getSuffix}
 \alias{getSuffix}
-\title{Get the suffix}
+\title{Helper function: get the suffix}
 \usage{
 getSuffix(index, sequence)
 }
@@ -15,6 +15,10 @@ getSuffix(index, sequence)
 The substring starting at the given position
 }
 \description{
-This function gets the suffix of the string starting from a position given
-in input
+This is a helper function that performs a specific task for the main function
+\code{\link{getSA}}.It gets the suffix of the string starting from
+a position given in input.
+}
+\seealso{
+{\link{getSA}}
 }

@@ -75,31 +75,28 @@ No file Rd2.aux.
 (/usr/share/texlive/texmf-dist/tex/latex/inconsolata/t1zi4.fd)
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd) [1{/var/lib/texmf/fon
 ts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 58--60
-
-[2] [3] [4]
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd) [2] [3] [4] [5]
+[6] [7]
 No file Rd2.ind.
-[5] [6] (./Rd2.aux)
+[8] (./Rd2.aux)
 
 Package rerunfilecheck Warning: File `Rd2.out' has changed.
 (rerunfilecheck)                Rerun to get outlines right
 (rerunfilecheck)                or use package `bookmark'.
 
- )
-(see the transcript file for additional information){/usr/share/texlive/texmf-d
-ist/fonts/enc/dvips/base/8r.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/
-inconsolata/i4-t1-0.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/incon
-solata/Inconsolata-zi4r.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helv
-etic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (6 pages, 87492 bytes).
+ ){/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texliv
+e/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc}</usr/share/texlive/texmf-
+dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/ti
+mes/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Rd2.pdf (8 pages, 90097 bytes).
 Transcript written on Rd2.log.
 This is makeindex, version 2.15 [TeX Live 2022/dev] (kpathsea + Thai support).
-Scanning input file Rd2.idx....done (9 entries accepted, 0 rejected).
-Sorting entries....done (27 comparisons).
-Generating output file Rd2.ind....done (17 lines written, 0 warnings).
+Scanning input file Rd2.idx....done (16 entries accepted, 0 rejected).
+Sorting entries....done (60 comparisons).
+Generating output file Rd2.ind....done (20 lines written, 0 warnings).
 Output written in Rd2.ind.
 Transcript written in Rd2.ilg.
 This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex)
@@ -176,14 +173,13 @@ Writing index file Rd2.idx
 (/usr/share/texlive/texmf-dist/tex/latex/inconsolata/t1zi4.fd)
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd) (./Rd2.toc) [1{/var/l
 ib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 58--60
-
-[2] [3] [4] [5] (./Rd2.ind [6]
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd) [2] [3] [4] [5]
+[6] [7] (./Rd2.ind [8]
 
 LaTeX Font Warning: Font shape `T1/zi4/m/it' undefined
 (Font)              using `T1/zi4/m/n' instead on input line 3.
 
-[7]) (./Rd2.aux)
+[9]) (./Rd2.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -192,21 +188,19 @@ Package rerunfilecheck Warning: File `Rd2.out' has changed.
 (rerunfilecheck)                Rerun to get outlines right
 (rerunfilecheck)                or use package `bookmark'.
 
- )
-(see the transcript file for additional information){/usr/share/texlive/texmf-d
-ist/fonts/enc/dvips/base/8r.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/
-inconsolata/i4-t1-0.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/incon
-solata/Inconsolata-zi4r.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helv
-etic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (7 pages, 90067 bytes).
+ ){/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texliv
+e/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc}</usr/share/texlive/texmf-
+dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/ti
+mes/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Rd2.pdf (9 pages, 94210 bytes).
 Transcript written on Rd2.log.
 This is makeindex, version 2.15 [TeX Live 2022/dev] (kpathsea + Thai support).
-Scanning input file Rd2.idx....done (9 entries accepted, 0 rejected).
-Sorting entries....done (27 comparisons).
-Generating output file Rd2.ind....done (17 lines written, 0 warnings).
+Scanning input file Rd2.idx....done (16 entries accepted, 0 rejected).
+Sorting entries....done (62 comparisons).
+Generating output file Rd2.ind....done (21 lines written, 1 warning).
 Output written in Rd2.ind.
 Transcript written in Rd2.ilg.
 This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex)
@@ -283,28 +277,25 @@ Writing index file Rd2.idx
 (/usr/share/texlive/texmf-dist/tex/latex/inconsolata/t1zi4.fd)
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd) (./Rd2.toc) [1{/var/l
 ib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 58--60
-
-[2] [3] [4] [5] (./Rd2.ind [6]
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd) [2] [3] [4] [5]
+[6] [7] (./Rd2.ind [8]
 
 LaTeX Font Warning: Font shape `T1/zi4/m/it' undefined
 (Font)              using `T1/zi4/m/n' instead on input line 3.
 
-[7]) (./Rd2.aux)
+[9]) (./Rd2.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
- )
-(see the transcript file for additional information){/usr/share/texlive/texmf-d
-ist/fonts/enc/dvips/base/8r.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/
-inconsolata/i4-t1-0.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/incon
-solata/Inconsolata-zi4r.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helv
-etic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (7 pages, 90230 bytes).
+ ){/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texliv
+e/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc}</usr/share/texlive/texmf-
+dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/ti
+mes/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Rd2.pdf (9 pages, 94207 bytes).
 Transcript written on Rd2.log.
 Saving output to ‘FMIndex-manual.pdf’ ...
 Done
-You may want to clean up by 'rm -Rf /tmp/RtmpPV5sTI/Rd2pdf32d674df8ea7'
+You may want to clean up by 'rm -Rf /tmp/Rtmps2e0rO/Rd2pdf361e20c22d65'

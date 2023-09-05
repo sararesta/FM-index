@@ -13,12 +13,16 @@ vignette: >
 library(BiocStyle)
 ```
 
-```{r setup}
+```{r setup1}
 library(FMIndex)
 ```
 
-```{r, echo = FALSE}
+```{r setup2, echo = FALSE}
 library(knitr)
+```
+
+```{r session_info, include=FALSE}
+sessionInfo()
 ```
 
 # Introduction
@@ -29,28 +33,75 @@ FM index is a very important tool for compressing data
 
 ## F column
 
-```{r}
+The F column is given as a integer, the names of the elements are the characters
+of the sequence. In this example the argument `includeEndChar` is not specified
+so it's set to its default value `TRUE`.
+
+```{r F_column_ex1}
+getFcolumn(Biostrings::DNAString("ACCT"))
+```
+
+This is an example with the argument argument `includeEndChar` set to `FALSE`.
+```{r F_column_ex2}
 getFcolumn(Biostrings::DNAString("ACCT"))
 ```
 
 ## L column
 
-```{r}
+The L column is the Burrows-Wheeler transformation of the give sequence. The
+function returns also the suffix array.
+
+```{r L_column_ex}
 getLcolumn(Biostrings::DNAString("AACCGT"))
 ```
 
 ## Tally table
 
-```{r}
+The Tally table contains the occurrences of each unique character for each 
+position of the L column (BWT). It can be compressed saving just some rows with 
+regular intervals (checkpoints).
+
+In this example each row of the Tally Table is saved
+
+```{r tally_table_ex1}
 getTallyTable(Biostrings::DNAString("T.AACCG"))
 ```
 
-```{r}
+Here we save a checkpoint every two rows.
+
+```{r tally_table_ex2}
 getTallyTable(Biostrings::DNAString("T.AACCG"),2)
+```
+
+## Suffix Array
+
+```{r suffix_array_ex}
+getSA(Biostrings::DNAString("ACGTTC"))
 ```
 
 # Computing the FM index
 
-```{r}
-FMindex(system.file("extdata/vignettes/seq5.fasta",package="FMIndex"),"")
+Default values:
+
+-   `tallywidth=1`
+
+-   `includeEndChar=TRUE`
+
+```{r FM_ex1}
+FMindex(system.file("extdata/vignettes/seq.fasta",package="FMIndex"),"")
+```
+
+Here the end character is included in the F column.
+
+```{r FM_ex2}
+FMindex(system.file("extdata/vignettes/seq.fasta",package="FMIndex"),"",
+        includeEndChar=FALSE)
+```
+
+By setting the parameter `tallywidth=10` we save one checkpoint every ten rows 
+in the tally table.
+
+```{r FM_ex3}
+FMindex(system.file("extdata/vignettes/seq.fasta",package="FMIndex"),"",
+        tallywidth=10)
 ```

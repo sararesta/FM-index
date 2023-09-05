@@ -7,13 +7,18 @@
 getLcolumn(sequence)
 }
 \arguments{
-\item{sequence}{the string to be analysed}
+\item{sequence}{the DNAString to be analysed}
 }
 \value{
-A DNAString containing the L column of the FM index
+A list containing the L column (BWT) and the suffix array
 }
 \description{
 This function gets a character and gives the F column of the FM index
+}
+\details{
+\itemize{
+\item The provided sequence is empty
+}
 }
 \examples{
 getLcolumn(Biostrings::DNAString("ACGT"))
