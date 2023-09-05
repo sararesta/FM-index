@@ -14,3 +14,24 @@
 -------------------------------------------------------------
   
 ## Project guidelines
+### Short description
+Write a Perl script or an R package with a function that takes a single FASTA
+sequence file (DNA sequence) as input and writes a corresponding FM Index. Implement your own
+version, do not just use some external tool/library to do the job.
+
+### Expected outcome
+For any FASTA file (containing a single DNA sequence) specified by the user, the Python script or
+R package should:
+ 1. Compute all necessary data structures of which the FM Index is composed.
+ 2. Write the individual FM data structures as individual files into a user-specified folder.
+
+### Hints/Notes
+For this task, a compression of the obtained FM Index is not required, but it will be evaluated
+positively.
+
+### Literature/Resources
+Ben Langmead: “Introduction to the Burrows-Wheeler Transform and FM Index”.
+https://www.cs.jhu.edu/~langmea/resources/bwt_fm.pdf
+Paolo Ferragina and Giovanni Manzini: “Opportunistic data structures with applications”. In
+Foundations of Computer Science, 2000. Proceedings. 41st Annual Symposium on, pages 390–398.
+IEEE, 2000. https://people.unipmn.it/manzini/papers/focs00draft.pdf
