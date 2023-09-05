@@ -34,7 +34,7 @@ Ben Langmead: “Introduction to the Burrows-Wheeler Transform and FM Index”.
 https://www.cs.jhu.edu/~langmea/resources/bwt_fm.pdf
 Paolo Ferragina and Giovanni Manzini: “Opportunistic data structures with applications”. In
 Foundations of Computer Science, 2000. Proceedings. 41st Annual Symposium on, pages 390–398.
-IEEE, 2000. https://people.unipmn.it/manzini/papers/focs00draft.pdf
+IEEE, 2000. https://people.unipmn.it/manzini/papers/focs00draft.pdf 
   
 -------------------------------------------------------------
 
