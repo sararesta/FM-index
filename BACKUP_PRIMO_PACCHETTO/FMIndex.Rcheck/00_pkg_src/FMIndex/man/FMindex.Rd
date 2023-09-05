@@ -14,22 +14,25 @@ files containing multiple sequences are not allowed}
 it must end with '/' (you can leave it empty if you want to save the files
 in your working directory).}
 
-\item{tallywidth}{How you want to compress the tally table. Default value=1}
+\item{tallywidth}{How you want to compress the tally table. It states
+how often (in terms of rows) you save one checkpoint. Default value=1}
 
-\item{includeEndChar}{default value: true}
+\item{includeEndChar}{True if you want to include the "." in the F column,
+false if you want to exclude it. Default value:TRUE}
 }
 \value{
 A list containint all the data structures necessary for the FM index
 }
 \description{
 This function writes the FM index of the DNA sequence contained in the
-.fasta file given in input
+FASTA file given in input
 }
 \details{
 This function may raise an error if:
-- The FASTA file provided contains more than one sequence
-- The FASTA file provided contains no sequences
-- The sequence of the FASTA file provided is empty
+\itemize{
+\item The FASTA file provided contains more than one sequence
+\item The FASTA file provided contains no sequences
+}
 }
 \examples{
 FMindex(system.file("extdata/examples/seq.fasta",package="FMIndex"),"")

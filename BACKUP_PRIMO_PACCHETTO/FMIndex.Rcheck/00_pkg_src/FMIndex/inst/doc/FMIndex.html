@@ -369,15 +369,19 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <h1>FM index data structures</h1>
 <div id="f-column" class="section level2">
 <h2>F column</h2>
-<p>The F column is given as a integer, the names of the elements are the characters of the sequence.</p>
+<p>The F column is given as a integer, the names of the elements are the characters of the sequence. In this example the argument <code>includeEndChar</code> is not specified so it’s set to its default value <code>TRUE</code>.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="kw">getFcolumn</span>(Biostrings<span class="op">::</span><span class="kw">DNAString</span>(<span class="st">&quot;ACCT&quot;</span>))</span></code></pre></div>
+<pre><code>## . A C T 
+## 1 1 2 1</code></pre>
+<p>This is an example with the argument argument <code>includeEndChar</code> set to <code>FALSE</code>.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="kw">getFcolumn</span>(Biostrings<span class="op">::</span><span class="kw">DNAString</span>(<span class="st">&quot;ACCT&quot;</span>))</span></code></pre></div>
 <pre><code>## . A C T 
 ## 1 1 2 1</code></pre>
 </div>
 <div id="l-column" class="section level2">
 <h2>L column</h2>
-<p>The L column is the Burrows-Wheeler transformation of the give sequence. The function returns a DNAString.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="kw">getLcolumn</span>(Biostrings<span class="op">::</span><span class="kw">DNAString</span>(<span class="st">&quot;AACCGT&quot;</span>))</span></code></pre></div>
+<p>The L column is the Burrows-Wheeler transformation of the give sequence. The function returns also the suffix array.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="kw">getLcolumn</span>(Biostrings<span class="op">::</span><span class="kw">DNAString</span>(<span class="st">&quot;AACCGT&quot;</span>))</span></code></pre></div>
 <pre><code>## $bwt
 ## 7-letter DNAString object
 ## seq: T.AACCG
@@ -387,8 +391,9 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 </div>
 <div id="tally-table" class="section level2">
 <h2>Tally table</h2>
-<p>The Tally table contains</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="kw">getTallyTable</span>(Biostrings<span class="op">::</span><span class="kw">DNAString</span>(<span class="st">&quot;T.AACCG&quot;</span>))</span></code></pre></div>
+<p>The Tally table contains the occurrences of each unique character for each position of the L column (BWT). It can be compressed saving just some rows with regular intervals (checkpoints).</p>
+<p>In this example each row of the Tally Table is saved</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="kw">getTallyTable</span>(Biostrings<span class="op">::</span><span class="kw">DNAString</span>(<span class="st">&quot;T.AACCG&quot;</span>))</span></code></pre></div>
 <pre><code>##      A C G T
 ## [1,] 0 0 0 1
 ## [2,] 0 0 0 1
@@ -397,7 +402,8 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 ## [5,] 2 1 0 1
 ## [6,] 2 2 0 1
 ## [7,] 2 2 1 1</code></pre>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="kw">getTallyTable</span>(Biostrings<span class="op">::</span><span class="kw">DNAString</span>(<span class="st">&quot;T.AACCG&quot;</span>),<span class="dv">2</span>)</span></code></pre></div>
+<p>Here we save a checkpoint every two rows.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true"></a><span class="kw">getTallyTable</span>(Biostrings<span class="op">::</span><span class="kw">DNAString</span>(<span class="st">&quot;T.AACCG&quot;</span>),<span class="dv">2</span>)</span></code></pre></div>
 <pre><code>##      A C G T
 ## [1,] 0 0 0 1
 ## [2,] 1 0 0 1
@@ -406,280 +412,198 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 </div>
 <div id="suffix-array" class="section level2">
 <h2>Suffix Array</h2>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true"></a><span class="kw">getSA</span>(Biostrings<span class="op">::</span><span class="kw">DNAString</span>(<span class="st">&quot;ACGTTC&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true"></a><span class="kw">getSA</span>(Biostrings<span class="op">::</span><span class="kw">DNAString</span>(<span class="st">&quot;ACGTTC&quot;</span>))</span></code></pre></div>
 <pre><code>## [1] 7 1 6 2 3 5 4</code></pre>
 </div>
 </div>
 <div id="computing-the-fm-index" class="section level1">
 <h1>Computing the FM index</h1>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true"></a><span class="kw">FMindex</span>(<span class="kw">system.file</span>(<span class="st">&quot;extdata/vignettes/seq5.fasta&quot;</span>,<span class="dt">package=</span><span class="st">&quot;FMIndex&quot;</span>),<span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<p>Default values:</p>
+<ul>
+<li><p><code>tallywidth=1</code></p></li>
+<li><p><code>includeEndChar=TRUE</code></p></li>
+</ul>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true"></a><span class="kw">FMindex</span>(<span class="kw">system.file</span>(<span class="st">&quot;extdata/vignettes/seq.fasta&quot;</span>,<span class="dt">package=</span><span class="st">&quot;FMIndex&quot;</span>),<span class="st">&quot;&quot;</span>)</span></code></pre></div>
 <pre><code>## $F_column
 ##  .  A  C  G  T 
-##  1 56 56 57 71 
+##  1 14 13 13 20 
 ## 
 ## $L_column
-## 241-letter DNAString object
-## seq: AGTTGACATTGTATATTGGCGAACCTACCATAG.AC...TGGTCCCAAGCCTCGGCCGTACACTTTGCGGCCGGG
+## 61-letter DNAString object
+## seq: GTTAAGAACAT.AGCTGATTATGGTTGAACATGGTCTTTTTTCTGCCTAACAGCGCCTCGC
 ## 
 ## $suffix_array
-##   [1] 241 240  25  14 203  26 236  15  84 115  19 209 204  81  27  77  88 107
-##  [19] 102 175 199 237  16 109  68 142  85  64  43 116  92  20 216   1 210 172
-##  [37] 161 218 104 133 205 181 112  72  59  82  75 169 166 177  28   3 124  53
-##  [55] 212  78  89 235 174 108  67  63  42 171 160 103 132  71 168 176  52 226
-##  [73] 200 163 190 152 227 220 238 201  17 110 164  69  46 191 143 187 149 119
-##  [91] 153  97  12  86 179 122  65  44 117  10 129  49 136 228  38  93  30   5
-## [109] 139  56 126 221  21 239 202  18 106 101 198 215 217 111 165   2 211 173
-## [127]  62 159 131  70  51 162 219  48 135  37 138  55 105 214  47 134  36 192
-## [145] 206 193 230 182 144 113 207  73  40 224 188 150  95 120 196  60  34 194
-## [163]  32 154   7  98 156 231 183 145  24  13  83 114 208  80  76  87 141  91
-## [181] 180  58  74 123 234  66  41 170 167 225 189 151  45 186 148 118  96  11
-## [199] 178 121   9 128  29   4 125 100 197  61 158 130  50 137  54 213  35 229
-## [217]  39 223  94 195  33  31   6 155  23  79 140  90  57 233 185 147   8 127
-## [235]  99 157 222  22 232 184 146
+##  [1] 61 25 14 26 15 19 27 16 43 20 59  1 28  3 53 42 52 17 46 12 44 10 49 38 30
+## [26]  5 56 21 60 18  2 51 48 37 55 47 36 40 34 32  7 24 13 58 41 45 11  9 29  4
+## [51] 50 54 35 39 33 31  6 23 57  8 22
 ## 
 ## $tally_table
-##         A  C  G  T
-##   [1,]  1  0  0  0
-##   [2,]  1  0  1  0
-##   [3,]  1  0  1  1
-##   [4,]  1  0  1  2
-##   [5,]  1  0  2  2
-##   [6,]  2  0  2  2
-##   [7,]  2  1  2  2
-##   [8,]  3  1  2  2
-##   [9,]  3  1  2  3
-##  [10,]  3  1  2  4
-##  [11,]  3  1  3  4
-##  [12,]  3  1  3  5
-##  [13,]  4  1  3  5
-##  [14,]  4  1  3  6
-##  [15,]  5  1  3  6
-##  [16,]  5  1  3  7
-##  [17,]  5  1  3  8
-##  [18,]  5  1  4  8
-##  [19,]  5  1  5  8
-##  [20,]  5  2  5  8
-##  [21,]  5  2  6  8
-##  [22,]  6  2  6  8
-##  [23,]  7  2  6  8
-##  [24,]  7  3  6  8
-##  [25,]  7  4  6  8
-##  [26,]  7  4  6  9
-##  [27,]  8  4  6  9
-##  [28,]  8  5  6  9
-##  [29,]  8  6  6  9
-##  [30,]  9  6  6  9
-##  [31,]  9  6  6 10
-##  [32,] 10  6  6 10
-##  [33,] 10  6  7 10
-##  [34,] 10  6  7 10
-##  [35,] 11  6  7 10
-##  [36,] 11  7  7 10
-##  [37,] 11  8  7 10
-##  [38,] 11  8  8 10
-##  [39,] 11  9  8 10
-##  [40,] 11 10  8 10
-##  [41,] 12 10  8 10
-##  [42,] 12 10  8 11
-##  [43,] 12 10  9 11
-##  [44,] 12 11  9 11
-##  [45,] 12 11  9 12
-##  [46,] 13 11  9 12
-##  [47,] 13 11  9 13
-##  [48,] 13 12  9 13
-##  [49,] 13 12 10 13
-##  [50,] 13 13 10 13
-##  [51,] 14 13 10 13
-##  [52,] 14 13 11 13
-##  [53,] 14 13 11 14
-##  [54,] 14 14 11 14
-##  [55,] 14 14 12 14
-##  [56,] 15 14 12 14
-##  [57,] 16 14 12 14
-##  [58,] 16 14 12 15
-##  [59,] 16 14 13 15
-##  [60,] 17 14 13 15
-##  [61,] 17 14 13 16
-##  [62,] 17 14 14 16
-##  [63,] 17 14 14 17
-##  [64,] 17 14 14 18
-##  [65,] 17 14 15 18
-##  [66,] 18 14 15 18
-##  [67,] 18 14 16 18
-##  [68,] 18 14 17 18
-##  [69,] 18 14 17 19
-##  [70,] 19 14 17 19
-##  [71,] 19 14 18 19
-##  [72,] 19 14 18 20
-##  [73,] 20 14 18 20
-##  [74,] 20 14 19 20
-##  [75,] 20 14 19 21
-##  [76,] 20 14 19 22
-##  [77,] 20 15 19 22
-##  [78,] 20 15 20 22
-##  [79,] 21 15 20 22
-##  [80,] 21 16 20 22
-##  [81,] 22 16 20 22
-##  [82,] 23 16 20 22
-##  [83,] 23 17 20 22
-##  [84,] 24 17 20 22
-##  [85,] 24 17 20 23
-##  [86,] 24 18 20 23
-##  [87,] 25 18 20 23
-##  [88,] 25 18 20 24
-##  [89,] 25 18 20 25
-##  [90,] 25 18 20 26
-##  [91,] 25 19 20 26
-##  [92,] 25 19 20 27
-##  [93,] 25 19 20 28
-##  [94,] 26 19 20 28
-##  [95,] 26 19 20 29
-##  [96,] 26 19 20 30
-##  [97,] 27 19 20 30
-##  [98,] 28 19 20 30
-##  [99,] 29 19 20 30
-## [100,] 29 19 20 31
-## [101,] 29 19 20 32
-## [102,] 29 19 21 32
-## [103,] 29 19 22 32
-## [104,] 29 20 22 32
-## [105,] 29 20 23 32
-## [106,] 30 20 23 32
-## [107,] 30 20 23 33
-## [108,] 30 20 23 34
-## [109,] 30 20 24 34
-## [110,] 30 20 25 34
-## [111,] 30 20 25 35
-## [112,] 30 21 25 35
-## [113,] 31 21 25 35
-## [114,] 31 22 25 35
-## [115,] 31 23 25 35
-## [116,] 31 24 25 35
-## [117,] 31 24 26 35
-## [118,] 31 24 26 36
-## [119,] 31 24 26 37
-## [120,] 31 24 27 37
-## [121,] 32 24 27 37
-## [122,] 32 25 27 37
-## [123,] 32 26 27 37
-## [124,] 33 26 27 37
-## [125,] 34 26 27 37
-## [126,] 35 26 27 37
-## [127,] 35 26 27 38
-## [128,] 35 26 27 39
-## [129,] 35 26 27 40
-## [130,] 35 27 27 40
-## [131,] 35 27 27 41
-## [132,] 36 27 27 41
-## [133,] 37 27 27 41
-## [134,] 37 27 28 41
-## [135,] 37 27 29 41
-## [136,] 37 27 30 41
-## [137,] 37 27 30 42
-## [138,] 37 27 30 43
-## [139,] 38 27 30 43
-## [140,] 38 27 30 44
-## [141,] 38 28 30 44
-## [142,] 39 28 30 44
-## [143,] 39 28 30 45
-## [144,] 39 29 30 45
-## [145,] 40 29 30 45
-## [146,] 40 29 31 45
-## [147,] 40 29 31 46
-## [148,] 41 29 31 46
-## [149,] 41 30 31 46
-## [150,] 42 30 31 46
-## [151,] 42 30 32 46
-## [152,] 43 30 32 46
-## [153,] 43 30 32 47
-## [154,] 43 30 32 48
-## [155,] 43 31 32 48
-## [156,] 43 32 32 48
-## [157,] 43 32 32 49
-## [158,] 43 33 32 49
-## [159,] 43 33 32 50
-## [160,] 44 33 32 50
-## [161,] 44 33 32 51
-## [162,] 44 33 33 51
-## [163,] 44 33 33 52
-## [164,] 44 34 33 52
-## [165,] 44 34 33 53
-## [166,] 44 35 33 53
-## [167,] 44 35 33 54
-## [168,] 44 35 34 54
-## [169,] 44 35 35 54
-## [170,] 44 35 36 54
-## [171,] 44 35 36 55
-## [172,] 44 36 36 55
-## [173,] 45 36 36 55
-## [174,] 45 36 37 55
-## [175,] 45 36 38 55
-## [176,] 45 36 38 56
-## [177,] 46 36 38 56
-## [178,] 46 37 38 56
-## [179,] 46 37 38 57
-## [180,] 46 37 38 58
-## [181,] 46 38 38 58
-## [182,] 46 38 38 59
-## [183,] 46 38 39 59
-## [184,] 46 39 39 59
-## [185,] 46 39 39 60
-## [186,] 46 40 39 60
-## [187,] 46 40 40 60
-## [188,] 47 40 40 60
-## [189,] 48 40 40 60
-## [190,] 48 40 41 60
-## [191,] 48 40 42 60
-## [192,] 48 40 43 60
-## [193,] 48 41 43 60
-## [194,] 48 41 43 61
-## [195,] 48 41 43 62
-## [196,] 48 42 43 62
-## [197,] 48 42 44 62
-## [198,] 48 43 44 62
-## [199,] 49 43 44 62
-## [200,] 49 43 45 62
-## [201,] 49 43 45 63
-## [202,] 49 43 45 64
-## [203,] 50 43 45 64
-## [204,] 51 43 45 64
-## [205,] 52 43 45 64
-## [206,] 52 43 45 65
-## [207,] 52 43 46 65
-## [208,] 52 43 47 65
-## [209,] 52 43 47 66
-## [210,] 52 44 47 66
-## [211,] 52 45 47 66
-## [212,] 52 46 47 66
-## [213,] 53 46 47 66
-## [214,] 54 46 47 66
-## [215,] 54 46 48 66
-## [216,] 54 47 48 66
-## [217,] 54 48 48 66
-## [218,] 54 48 48 67
-## [219,] 54 49 48 67
-## [220,] 54 49 49 67
-## [221,] 54 49 50 67
-## [222,] 54 50 50 67
-## [223,] 54 51 50 67
-## [224,] 54 51 51 67
-## [225,] 54 51 51 68
-## [226,] 55 51 51 68
-## [227,] 55 52 51 68
-## [228,] 56 52 51 68
-## [229,] 56 53 51 68
-## [230,] 56 53 51 69
-## [231,] 56 53 51 70
-## [232,] 56 53 51 71
-## [233,] 56 53 52 71
-## [234,] 56 54 52 71
-## [235,] 56 54 53 71
-## [236,] 56 54 54 71
-## [237,] 56 55 54 71
-## [238,] 56 56 54 71
-## [239,] 56 56 55 71
-## [240,] 56 56 56 71
-## [241,] 56 56 57 71</code></pre>
+##        A  C  G  T
+##  [1,]  0  0  1  0
+##  [2,]  0  0  1  1
+##  [3,]  0  0  1  2
+##  [4,]  1  0  1  2
+##  [5,]  2  0  1  2
+##  [6,]  2  0  2  2
+##  [7,]  3  0  2  2
+##  [8,]  4  0  2  2
+##  [9,]  4  1  2  2
+## [10,]  5  1  2  2
+## [11,]  5  1  2  3
+## [12,]  5  1  2  3
+## [13,]  6  1  2  3
+## [14,]  6  1  3  3
+## [15,]  6  2  3  3
+## [16,]  6  2  3  4
+## [17,]  6  2  4  4
+## [18,]  7  2  4  4
+## [19,]  7  2  4  5
+## [20,]  7  2  4  6
+## [21,]  8  2  4  6
+## [22,]  8  2  4  7
+## [23,]  8  2  5  7
+## [24,]  8  2  6  7
+## [25,]  8  2  6  8
+## [26,]  8  2  6  9
+## [27,]  8  2  7  9
+## [28,]  9  2  7  9
+## [29,] 10  2  7  9
+## [30,] 10  3  7  9
+## [31,] 11  3  7  9
+## [32,] 11  3  7 10
+## [33,] 11  3  8 10
+## [34,] 11  3  9 10
+## [35,] 11  3  9 11
+## [36,] 11  4  9 11
+## [37,] 11  4  9 12
+## [38,] 11  4  9 13
+## [39,] 11  4  9 14
+## [40,] 11  4  9 15
+## [41,] 11  4  9 16
+## [42,] 11  4  9 17
+## [43,] 11  5  9 17
+## [44,] 11  5  9 18
+## [45,] 11  5 10 18
+## [46,] 11  6 10 18
+## [47,] 11  7 10 18
+## [48,] 11  7 10 19
+## [49,] 12  7 10 19
+## [50,] 13  7 10 19
+## [51,] 13  8 10 19
+## [52,] 14  8 10 19
+## [53,] 14  8 11 19
+## [54,] 14  9 11 19
+## [55,] 14  9 12 19
+## [56,] 14 10 12 19
+## [57,] 14 11 12 19
+## [58,] 14 11 12 20
+## [59,] 14 12 12 20
+## [60,] 14 12 13 20
+## [61,] 14 13 13 20</code></pre>
+<p>Here the end character is included in the F column.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true"></a><span class="kw">FMindex</span>(<span class="kw">system.file</span>(<span class="st">&quot;extdata/vignettes/seq.fasta&quot;</span>,<span class="dt">package=</span><span class="st">&quot;FMIndex&quot;</span>),<span class="st">&quot;&quot;</span>,</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true"></a>        <span class="dt">includeEndChar=</span><span class="ot">FALSE</span>)</span></code></pre></div>
+<pre><code>## $F_column
+##  A  C  G  T 
+## 14 13 13 20 
+## 
+## $L_column
+## 61-letter DNAString object
+## seq: GTTAAGAACAT.AGCTGATTATGGTTGAACATGGTCTTTTTTCTGCCTAACAGCGCCTCGC
+## 
+## $suffix_array
+##  [1] 61 25 14 26 15 19 27 16 43 20 59  1 28  3 53 42 52 17 46 12 44 10 49 38 30
+## [26]  5 56 21 60 18  2 51 48 37 55 47 36 40 34 32  7 24 13 58 41 45 11  9 29  4
+## [51] 50 54 35 39 33 31  6 23 57  8 22
+## 
+## $tally_table
+##        A  C  G  T
+##  [1,]  0  0  1  0
+##  [2,]  0  0  1  1
+##  [3,]  0  0  1  2
+##  [4,]  1  0  1  2
+##  [5,]  2  0  1  2
+##  [6,]  2  0  2  2
+##  [7,]  3  0  2  2
+##  [8,]  4  0  2  2
+##  [9,]  4  1  2  2
+## [10,]  5  1  2  2
+## [11,]  5  1  2  3
+## [12,]  5  1  2  3
+## [13,]  6  1  2  3
+## [14,]  6  1  3  3
+## [15,]  6  2  3  3
+## [16,]  6  2  3  4
+## [17,]  6  2  4  4
+## [18,]  7  2  4  4
+## [19,]  7  2  4  5
+## [20,]  7  2  4  6
+## [21,]  8  2  4  6
+## [22,]  8  2  4  7
+## [23,]  8  2  5  7
+## [24,]  8  2  6  7
+## [25,]  8  2  6  8
+## [26,]  8  2  6  9
+## [27,]  8  2  7  9
+## [28,]  9  2  7  9
+## [29,] 10  2  7  9
+## [30,] 10  3  7  9
+## [31,] 11  3  7  9
+## [32,] 11  3  7 10
+## [33,] 11  3  8 10
+## [34,] 11  3  9 10
+## [35,] 11  3  9 11
+## [36,] 11  4  9 11
+## [37,] 11  4  9 12
+## [38,] 11  4  9 13
+## [39,] 11  4  9 14
+## [40,] 11  4  9 15
+## [41,] 11  4  9 16
+## [42,] 11  4  9 17
+## [43,] 11  5  9 17
+## [44,] 11  5  9 18
+## [45,] 11  5 10 18
+## [46,] 11  6 10 18
+## [47,] 11  7 10 18
+## [48,] 11  7 10 19
+## [49,] 12  7 10 19
+## [50,] 13  7 10 19
+## [51,] 13  8 10 19
+## [52,] 14  8 10 19
+## [53,] 14  8 11 19
+## [54,] 14  9 11 19
+## [55,] 14  9 12 19
+## [56,] 14 10 12 19
+## [57,] 14 11 12 19
+## [58,] 14 11 12 20
+## [59,] 14 12 12 20
+## [60,] 14 12 13 20
+## [61,] 14 13 13 20</code></pre>
+<p>By setting the parameter <code>tallywidth=10</code> we save one checkpoint every ten rows in the tally table.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true"></a><span class="kw">FMindex</span>(<span class="kw">system.file</span>(<span class="st">&quot;extdata/vignettes/seq.fasta&quot;</span>,<span class="dt">package=</span><span class="st">&quot;FMIndex&quot;</span>),<span class="st">&quot;&quot;</span>,</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true"></a>        <span class="dt">tallywidth=</span><span class="dv">10</span>)</span></code></pre></div>
+<pre><code>## $F_column
+##  .  A  C  G  T 
+##  1 14 13 13 20 
+## 
+## $L_column
+## 61-letter DNAString object
+## seq: GTTAAGAACAT.AGCTGATTATGGTTGAACATGGTCTTTTTTCTGCCTAACAGCGCCTCGC
+## 
+## $suffix_array
+##  [1] 61 25 14 26 15 19 27 16 43 20 59  1 28  3 53 42 52 17 46 12 44 10 49 38 30
+## [26]  5 56 21 60 18  2 51 48 37 55 47 36 40 34 32  7 24 13 58 41 45 11  9 29  4
+## [51] 50 54 35 39 33 31  6 23 57  8 22
+## 
+## $tally_table
+##       A  C  G  T
+## [1,]  0  0  1  0
+## [2,]  5  1  2  3
+## [3,]  8  2  4  6
+## [4,] 11  3  7  9
+## [5,] 11  4  9 16
+## [6,] 13  8 10 19
+## [7,] 14 13 13 20</code></pre>
 </div>
 
 

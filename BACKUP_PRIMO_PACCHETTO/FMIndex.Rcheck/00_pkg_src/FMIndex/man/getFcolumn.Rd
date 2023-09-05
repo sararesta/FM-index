@@ -19,6 +19,12 @@ in the dna sequence given in input
 \description{
 This function gets a DNAString and gives the F column of the FM index
 }
+\details{
+This function may raise a warning if
+\itemize{
+\item The provided sequence is empty
+}
+}
 \examples{
 getFcolumn(Biostrings::DNAString("ACCT"))
 

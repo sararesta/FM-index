@@ -2,7 +2,7 @@
 % Please edit documentation in R/Lcolumn.R
 \name{getBWTcharacter}
 \alias{getBWTcharacter}
-\title{Compute the i-th character of the BWT}
+\title{Helper function: compute the i-th character of the BWT}
 \usage{
 getBWTcharacter(index, sequence, suffixarray)
 }
@@ -18,6 +18,10 @@ input string}
 A character containing the i-th character of the input sequence
 }
 \description{
-This function computes the i-th character of the BWT of a given
-sequence which corresponds to the i-th character in the L column.
+This is a helper function that performs a specific task for the main function
+\code{\link{getLcolumn}}. It computes the i-th character of the BWT of a
+given sequence which corresponds to the i-th character in the L column.
+}
+\seealso{
+{\link{getLcolumn}}
 }

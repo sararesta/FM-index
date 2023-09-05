@@ -15,7 +15,12 @@
 #' @importFrom Biostrings alphabetFrequency
 #' @importFrom Biostrings letterFrequency
 #' @importClassesFrom Biostrings DNAString
-#' 
+#' @details
+#' This function may raise a warning if
+#' \itemize{
+#'     \item The provided sequence is empty
+#' }
+#' @md
 getFcolumn <- function(seq,includeEndChar=TRUE){
     if(length(seq)<1){
         warning("The input sequence is empty.")

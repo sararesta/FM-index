@@ -16,6 +16,12 @@ An integer array containing the suffix array
 \description{
 This function computes the suffix array of a given string
 }
+\details{
+This function may raise a warning if
+\itemize{
+\item The provided sequence is empty
+}
+}
 \examples{
 getSA(Biostrings::DNAString("ACGT"))
 getSA(Biostrings::DNAString("AACCGT"))
