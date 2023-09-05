@@ -35,3 +35,11 @@ https://www.cs.jhu.edu/~langmea/resources/bwt_fm.pdf
 Paolo Ferragina and Giovanni Manzini: “Opportunistic data structures with applications”. In
 Foundations of Computer Science, 2000. Proceedings. 41st Annual Symposium on, pages 390–398.
 IEEE, 2000. https://people.unipmn.it/manzini/papers/focs00draft.pdf
+  
+-------------------------------------------------------------
+
+## Installing the package
+In the folder "Scripts" you will find the file ```steps.sh```. You can run it on the UNIX shell (```sh steps.sh```), it will build, check and install the package FMIndex and after that it will run BiocCheck.
+If you just want to install the package, run the following command:  
+```R CMD INSTALL FMIndex_0.99.0.tar.gz```
+
