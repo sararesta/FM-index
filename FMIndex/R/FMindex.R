@@ -27,28 +27,24 @@
 #' @export
 #' @importFrom Biostrings readDNAStringSet
 #' @importFrom utils write.table
+#' @importFrom methods is
 #' @md
 FMindex <- function(inputData,usrpath,tallywidth=1,includeEndChar=TRUE){
-    if (file.exists(inputData)) {
-        data <- read.table(inputData, header = TRUE)
+    if (methods::is(inputData, 'DNAString')) {
+        sequence <- inputData
+    } else if(file.exists(inputData)) {
         seqset <- Biostrings::readDNAStringSet(inputData,use.names=FALSE)
         if(length(seqset)>1){
-          stop("The FASTA file provided contains more than one sequence")
+            stop("The FASTA file provided contains more than one sequence")
         } else if(length(seqset)<1){
-          stop("The FASTA file provided has no sequences")
+            stop("The FASTA file provided has no sequences")
         }
         sequence <- unlist(seqset)
         sequence <- unlist(sequence)
     } else {
-        if(class(inputData) != "DNAString"){
-            stop("The input provided is neither a FASTA file, nor a DNAString,
-                 please provide one of the two")
-        }
-        sequence <- inputData
+        stop("The input provided is neither a FASTA file nor a DNAString")
     }
-  
-    
-    
+
     f.col <- getFcolumn(sequence,includeEndChar)
     res.list <- getLcolumn(sequence)
     l.col <- res.list[["bwt"]]
@@ -64,11 +60,11 @@ FMindex <- function(inputData,usrpath,tallywidth=1,includeEndChar=TRUE){
     FM <- list(f.col,l.col,SA,tally.table)
     names(FM) <- c("F_column","L_column","suffix_array","tally_table")
     
-    write.table(t(as.matrix(f.col)), file = f.col.filepath, sep = "\t", 
+    utils::write.table(t(as.matrix(f.col)), file = f.col.filepath, sep = "\t", 
                 row.names = FALSE)
     write(as.character(l.col),file=l.col.filepath)
     write(paste(SA, collapse = ","),file=SA.filepath)
-    write.table(tally.table, file = tally.table.filepath, 
+    utils::write.table(tally.table, file = tally.table.filepath, 
                 sep = "\t", row.names = FALSE,col.names = TRUE)
     
     return(FM)
