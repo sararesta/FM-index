@@ -33,3 +33,8 @@ test_that("Testing error condition",{
 test_that("Testing error condition",{
   expect_error(FMindex("multiple_seq.fasta",""),"The FASTA file provided contains more than one sequence")
 })
+
+test_that("Testing error condition",{
+  expect_error(FMindex("ACGT",""),"The input provided is neither a FASTA file, 
+  nor a DNAString,please provide one of the two")
+})

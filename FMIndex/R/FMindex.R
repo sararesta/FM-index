@@ -4,8 +4,8 @@
 #' This function writes the FM index of the DNA sequence contained in the 
 #' FASTA file given in input
 #'
-#' @param fastafile The .fasta file containing one single DNA sequence, 
-#' files containing multiple sequences are not allowed
+#' @param inputData Can be a DNAString or a FASTA file containing one single
+#' DNA sequence, files containing multiple sequences are not allowed.
 #' @param usrpath The directory path where the user wants to save the files: 
 #' it must end with '/' (you can leave it empty if you want to save the files 
 #' in your working directory).
@@ -28,16 +28,28 @@
 #' @importFrom Biostrings readDNAStringSet
 #' @importFrom utils write.table
 #' @md
-FMindex <- function(fastafile,usrpath,tallywidth=1,includeEndChar=TRUE){
-    seqset <- Biostrings::readDNAStringSet(fastafile,use.names=FALSE)
-    if(length(seqset)>1){
-        stop("The FASTA file provided contains more than one sequence")
-    } else if(length(seqset)<1){
-        stop("The FASTA file provided has no sequences")
+FMindex <- function(inputData,usrpath,tallywidth=1,includeEndChar=TRUE){
+    if (file.exists(inputData)) {
+        data <- read.table(inputData, header = TRUE)
+        seqset <- Biostrings::readDNAStringSet(inputData,use.names=FALSE)
+        if(length(seqset)>1){
+          stop("The FASTA file provided contains more than one sequence")
+        } else if(length(seqset)<1){
+          stop("The FASTA file provided has no sequences")
+        }
+        sequence <- unlist(seqset)
+        sequence <- unlist(sequence)
+    } else {
+        if(class(inputData) != "DNAString"){
+            stop("The input provided is neither a FASTA file, nor a DNAString,
+                 please provide one of the two")
+        }
+        sequence <- inputData
     }
+  
     
-    sequence <- unlist(seqset)
-    f.col <- getFcolumn(unlist(sequence),includeEndChar)
+    
+    f.col <- getFcolumn(sequence,includeEndChar)
     res.list <- getLcolumn(sequence)
     l.col <- res.list[["bwt"]]
     l.col <- unlist(l.col)
