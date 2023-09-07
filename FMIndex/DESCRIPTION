@@ -7,7 +7,7 @@ Authors@R:
 Description: The package computes the FM index of a DNA string contained in a fasta file.
              The user can specify the path where he wants to save the FM index data structures.
 	     The results will be also printed on the console.
-Imports: Biostrings, utils
+Imports: Biostrings, utils, methods
 Suggests: knitr, rmarkdown, BiocStyle, testthat
 License: GPL-2
 Encoding: UTF-8
