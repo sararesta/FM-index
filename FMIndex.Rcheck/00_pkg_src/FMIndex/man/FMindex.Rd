@@ -4,11 +4,11 @@
 \alias{FMindex}
 \title{Writes the FM index}
 \usage{
-FMindex(fastafile, usrpath, tallywidth = 1, includeEndChar = TRUE)
+FMindex(inputData, usrpath, tallywidth = 1, includeEndChar = TRUE)
 }
 \arguments{
-\item{fastafile}{The .fasta file containing one single DNA sequence,
-files containing multiple sequences are not allowed}
+\item{inputData}{Can be a DNAString or a FASTA file containing one single
+DNA sequence, files containing multiple sequences are not allowed.}
 
 \item{usrpath}{The directory path where the user wants to save the files:
 it must end with '/' (you can leave it empty if you want to save the files

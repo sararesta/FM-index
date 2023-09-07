@@ -1,6 +1,6 @@
 
-R version 4.1.2 (2021-11-01) -- "Bird Hippie"
-Copyright (C) 2021 The R Foundation for Statistical Computing
+R version 4.3.1 (2023-06-16) -- "Beagle Scouts"
+Copyright (C) 2023 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
@@ -18,8 +18,8 @@ Type 'q()' to quit R.
 > library(testthat)
 > test_check("FMIndex")
 Loading required package: FMIndex
-[ FAIL 0 | WARN 0 | SKIP 0 | PASS 21 ]
+[ FAIL 0 | WARN 0 | SKIP 0 | PASS 27 ]
 > 
 > proc.time()
    user  system elapsed 
-  5.650   0.348   7.089 
+  6.750   0.295   8.236 
