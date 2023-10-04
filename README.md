@@ -39,8 +39,14 @@ IEEE, 2000. https://people.unipmn.it/manzini/papers/focs00draft.pdf
 -------------------------------------------------------------
 
 ## Installing the package
-In the folder "Scripts" you will find the file ```steps.sh```. You can run it on the UNIX shell (```sh Scripts/steps.sh```), it will build, check and install the package FMIndex and after that it will run BiocCheck.  
+In the folder "Scripts" you will find the file ```steps.sh```. You can run it on the UNIX shell  
+```bash  
+   sh Scripts/steps.sh
+```   
+It will build, check and install the package FMIndex and after that it will run BiocCheck.  
   
 If you just want to install the package, run the following command:  
-```R CMD INSTALL FMIndex_0.99.0.tar.gz```
+```bash  
+R CMD INSTALL FMIndex_0.99.0.tar.gz
+```
 
